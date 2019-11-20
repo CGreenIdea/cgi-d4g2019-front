@@ -14,4 +14,9 @@ Les sources de ce challenge restent la propriété de l'équipe de développeurs
 - Aurore SIMON
 - Alexandre VALLES
 - Fabien HANESSE
-  
+
+# Contribution
+
+* `npm i` : installation des dépendances (une fois après le clone ou mise à jour des dépendances)
+* `npm run start` : démarre un serveur local (http://localhost:3000)
+* `npm run build` : construit le front dans le répertoire `dist`
