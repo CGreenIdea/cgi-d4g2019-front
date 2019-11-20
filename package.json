@@ -1,0 +1,37 @@
+{
+  "name": "green-l4nterne",
+  "version": "1.0.0",
+  "description": "Une proposition de réponse au challenge Design4green 2019",
+  "scripts": {
+    "start": "webpack-dev-server --config webpack.dev.js --hot",
+    "prebuild": "rimraf dist",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js"
+  },
+  "author": "CGreenIdea",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CGreenIdea/cgi-d4g2019-front/issues"
+  },
+  "homepage": "https://github.com/CGreenIdea/cgi-d4g2019-front#readme",
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
+    "@babel/plugin-syntax-object-rest-spread": "^7.2.0",
+    "@babel/preset-env": "^7.7.1",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "cross-env": "^6.0.3",
+    "css-loader": "^3.2.0",
+    "file-loader": "^4.2.0",
+    "imports-loader": "^0.8.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.13.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "rimraf": "^3.0.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0",
+    "webpack-merge": "^4.2.2"
+  }
+}
