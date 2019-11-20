@@ -8,7 +8,7 @@
     "start:webpack": "webpack-dev-server --config webpack.dev.js --hot",
     "prebuild": "rimraf dist",
     "build": "run-p build:**",
-    "build:html": "html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --input-dir src --output-dir dist",
+    "build:html": "html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --input-dir src --output-dir dist --file-ext html",
     "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.prod.js"
   },
   "author": "CGreenIdea",

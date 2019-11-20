@@ -1,15 +1,10 @@
+
+console.log("1");
+import { HeaderBar } from './navigationBar.mjs';
+console.log("2");
 import '../css/main.scss';
+console.log("3");
 
-// Here the JS
-class Container extends HTMLElement {
-    constructor() {
-        super();
-    }
-    connectedCallback() {
-      this.innerHTML = '<h1>green L4tern</h1>';
-    }
-}
+HeaderBar.loadHeader();
+console.log("index");
 
-customElements.define('main-container', Container);
-let container = new Container();
-document.querySelector('body').appendChild(container);
