@@ -1,8 +1,5 @@
 @import "partials/reset";
 
-//$font-family-main: Ubuntu, Geneva, Verdana, Tahoma, sans-serif;
-//$font-family-title: 'Ubuntu Condensed', 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans Condensed', 'Helvetica Neue', 'Arial Narrow', Helvetica, Verdana, Arial, sans-serif;
-
 :root-colors{
     --button-primary-background: #5fa82f;
     --button-primary-font: #fff;
@@ -16,14 +13,21 @@
 
     --text-hyperlink :#097dff;
     --text-watermark: #999999;
+
+    --font-family-main: Ubuntu, Geneva, Verdana, Tahoma, sans-serif;
+    --font-family-title: 'Ubuntu Condensed', 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans Condensed', 'Helvetica Neue', 'Arial Narrow', Helvetica, Verdana, Arial, sans-serif;
 }
 
 body {
     color: var(--text-bolder);
     font-size: 15px;
-    font-family: Ubuntu, Geneva, Verdana, Tahoma, sans-serif;
+    font-family: var(--font-family-main);
     font-weight: 400;
     font-style: normal;
     line-height: 32px;
     text-rendering: optimizeLegibility;
+}
+
+nav{
+    font-family: var(--font-family-main);
 }
