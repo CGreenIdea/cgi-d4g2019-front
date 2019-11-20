@@ -1,7 +1,7 @@
 @import "partials/reset";
 
-$font-family-main: Ubuntu, Geneva, Verdana, Tahoma, sans-serif;
-$font-family-title: 'Ubuntu Condensed', 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans Condensed', 'Helvetica Neue', 'Arial Narrow', Helvetica, Verdana, Arial, sans-serif;
+//$font-family-main: Ubuntu, Geneva, Verdana, Tahoma, sans-serif;
+//$font-family-title: 'Ubuntu Condensed', 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans Condensed', 'Helvetica Neue', 'Arial Narrow', Helvetica, Verdana, Arial, sans-serif;
 
 :root-colors{
     --button-primary-background: #5fa82f;
@@ -19,9 +19,9 @@ $font-family-title: 'Ubuntu Condensed', 'Segoe UI', Frutiger, 'Frutiger Linotype
 }
 
 body {
-    color: --text-bolder;
+    color: var(--text-bolder);
     font-size: 15px;
-    font-family: $font-family-main;
+    font-family: Ubuntu, Geneva, Verdana, Tahoma, sans-serif;
     font-weight: 400;
     font-style: normal;
     line-height: 32px;
