@@ -10,7 +10,7 @@ module.exports = merge(common, {
 
     output: {
         filename: "[name].js",
-        chunkFilename: "[id].css"
+        chunkFilename: "[id].js"
     },
 
 
@@ -28,9 +28,8 @@ module.exports = merge(common, {
     plugins: [
         new CleanWebpackPlugin({
             cleanOnceBeforeBuildPatterns: [
-                "dist/static/**/*.js",
-                "dist/static/**/*.css",
-                "site/data/webpack*.json"
+                "dist/**/*.js",
+                "dist/**/*.css"
             ]
         }),
 
