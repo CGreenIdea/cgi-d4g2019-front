@@ -1,12 +1,3 @@
-class HeaderBar {
-    HeaderBar() {
 
-    }
+console.log("navbar js");
 
-    loadHeader() {
-        console.log('Header component is loaded...');
-    }
-
-}
-
-export { HeaderBar };
