@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="{{ .Lang }}" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    {{- partial "head.html" . -}}
+  </head>
+  <body id="body">
+    <div id="main" class="content">
+      <div id="header" class="">
+        <ul id="navbar-menu" class="navbar">
+          <li>Ma consommation</li>
+          <li>Mes documents</li>
+          <li>Comparer mon logement</li>
+          <li>Nos conseils</li>
+        </ul>
+      </div>
+      <div id="content" class="">
+        {{- block "main" . }}{{ end -}}
+      </div>
+    </div>
+  </body>
+</html>
