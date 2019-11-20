@@ -1,14 +1,15 @@
 const webpack = require("webpack");
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const AssetsPlugin = require("assets-webpack-plugin");
 
 module.exports = {
     entry: {
-        main: path.join(__dirname, "src", "js", "index.js")
+        main: path.join(__dirname, "src", "index.js")
     },
 
     output: {
-        path: path.join(__dirname, "dist", "js")
+        path: path.join(__dirname, "tmp/webpack")
     },
 
     module: {
@@ -38,6 +39,12 @@ module.exports = {
     plugins: [
         new webpack.ProvidePlugin({
             fetch: "imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch"
+        }),
+
+        new AssetsPlugin({
+            filename: "webpack.json",
+            path: path.join(process.cwd(), "site/data"),
+            prettyPrint: true
         })
     ]
 };

@@ -10,26 +10,15 @@ module.exports = merge(common, {
 
     output: {
         filename: "[name].js",
-        chunkFilename: "[id].js"
-    },
-
-
-    devServer: {
-        port: process.env.PORT || 3000,
-        contentBase: path.join(process.cwd(), "./dist"),
-        watchContentBase: true,
-        quiet: false,
-        open: true,
-        historyApiFallback: {
-            rewrites: [{from: /./, to: "404.html"}]
-        }
+        chunkFilename: "[id].css"
     },
 
     plugins: [
         new CleanWebpackPlugin({
             cleanOnceBeforeBuildPatterns: [
-                "dist/**/*.js",
-                "dist/**/*.css"
+                "dist/static/**/*.js",
+                "dist/static/**/*.css",
+                "site/data/webpack*.json"
             ]
         }),
 

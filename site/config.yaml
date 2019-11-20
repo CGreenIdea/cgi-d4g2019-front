@@ -1,0 +1,15 @@
+title: Green l4nterne
+
+DefaultContentLanguage: fr
+baseUrl: https://vps753640.ovh.net
+
+# No taxonomies
+disableKinds:
+- taxonomy
+- taxonomyTerm
+
+# Include Webpack-compiled resources in static resources
+staticDir:
+- static
+- ../tmp/webpack
+- ../tmp/svg-sprite
