@@ -14,9 +14,27 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.((png)|(eot)|(woff)|(woff2)|(ttf)|(svg)|(gif))(\?v=\d+\.\d+\.\d+)?$/,
+                test: /\.((png)|(eot)|(woff)|(woff2)|(ttf)|(gif))(\?v=\d+\.\d+\.\d+)?$/,
                 loader: "file-loader?name=/[hash].[ext]"
             },
+
+            {
+                    test: /\.svg$/,
+                    use: [
+                      {loader: 'file-loader'},
+                      {
+                        loader: 'svgo-loader',
+                        options: {
+                          plugins: [
+                            {removeTitle: true},
+                            {convertColors: {shorthex: false}},
+                            {convertPathData: false}
+                          ]
+                        }
+                      }
+                    ]
+                  },
+
 
             {test: /\.json$/, loader: "json-loader"},
 
@@ -34,6 +52,8 @@ module.exports = {
             }
         ]
     },
+
+
 
     plugins: [
         new webpack.ProvidePlugin({
