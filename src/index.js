@@ -16,3 +16,5 @@ import {slideSubscriptionPrevious} from './js/inscription.mjs';
 window.slideSubscriptionPrevious = slideSubscriptionPrevious;
 import {checkChangeToOwner} from './js/inscription.mjs';
 window.checkChangeToOwner = checkChangeToOwner;
+import {checkDisclaimer} from './js/inscription.mjs';
+window.checkDisclaimer = checkDisclaimer;

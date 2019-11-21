@@ -96,10 +96,15 @@ body {
     color: white;
 }
 
-
+.crea {
+    overflow: hidden;
+    min-width: 100%;
+    min-height: 600px;
+    max-width: 100%;
+}
 .divMilieu {
-    position: fixed;
-    left: calc(49% - 10rem);
+    position: absolute;
+    left: calc(50% - 10rem);
     border: 1px solid var(--bandeau-background);
     width: 20rem;
     margin: 3rem auto;
@@ -109,13 +114,14 @@ body {
 }
 
 .divGauche {
-    position: fixed;
-    left: -40%;
+    position: absolute;
+    left: -50%;
     border: 1px solid var(--bandeau-background);
     width: 20rem;
-    margin: 3rem auto;
+    margin:0;
     padding: 20px;
     transition: all 0.8s linear;
+    overflow: hidden;
 }
 
 .divDroite {
@@ -123,9 +129,10 @@ body {
     left: 100%;
     border: 1px solid var(--bandeau-background);
     width: 20rem;
-    margin: 3rem auto;
+    margin:0;
     padding: 20px;
     transition: all 0.8s linear;
+    overflow: hidden;
 }
 
 .inputType {
@@ -134,19 +141,33 @@ body {
     width: 95%;
 }
 
-.greenButton {
-    background-color: var(--button-primary-background);
+.gButton , .gButton:hover{
     border: 0;
     padding: 8px;
     margin: 2rem 2px;
     width: 8rem;
     display: block;
     cursor: pointer;
-    color: var(--button-primary-font);
-    border-radius: 15px;
-    font-weight: bold;
+    border-radius: 0 15px;
+    font-weight: bold
 }
 
+.greyButton:hover {
+    background-color: var(--button-primary-background);
+    color: var(--button-primary-font)
+}
+.greyButton {
+    background-color: var(--bottom-menu-background);
+    color: var(--button-primary-font)
+}
+.greenButton:hover {
+    background-color: var(--button-primary-background);
+    color: var(--button-primary-font)
+}
+.greenButton {
+    background-color: var(--element-highlight);
+    color: var(--button-primary-font);
+}
 .gauche {
     float: left;
 }
