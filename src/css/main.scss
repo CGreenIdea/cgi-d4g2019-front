@@ -1,6 +1,9 @@
 @import "partials/reset";
 
-:root-colors{
+//$font-family-main: Ubuntu, Geneva, Verdana, Tahoma, sans-serif;
+//$font-family-title: 'Ubuntu Condensed', 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans Condensed', 'Helvetica Neue', 'Arial Narrow', Helvetica, Verdana, Arial, sans-serif;
+
+:root{
     --button-primary-background: #5fa82f;
     --button-primary-font: #fff;
 
@@ -14,10 +17,11 @@
     --text-hyperlink :#097dff;
     --text-watermark: #999999;
 
-    --font-family-main: Ubuntu, Geneva, Verdana, Tahoma, sans-serif;
-    --font-family-title: 'Ubuntu Condensed', 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans Condensed', 'Helvetica Neue', 'Arial Narrow', Helvetica, Verdana, Arial, sans-serif;
+    --bandeau-background: #58075C;
 }
-
+html {
+  height: 100%;
+}
 body {
     color: var(--text-bolder);
     font-size: 15px;
@@ -26,8 +30,110 @@ body {
     font-style: normal;
     line-height: 32px;
     text-rendering: optimizeLegibility;
+    height: 100%;
+    display : table;
+    	width: 100%;
 }
 
-nav{
-    font-family: var(--font-family-main);
+#bandeau {
+    background-color : var(--bandeau-background);
+    padding: 10px;
+    display : flex;
 }
+#bandeau img {
+    height:64px;
+    margin-right:10px
+}
+#bandeau a, #bandeau a:visited, #bandeau a:hover{border:0px}
+#menu {display:none}
+#bandeau ul {list-style : none;}
+#bandeau li {
+    display: inline-block;
+	vertical-align: middle;
+    height:56px;
+    line-height: 56px;
+    padding:4px;
+    background-color: var(--button-secondary-background);
+}
+
+#bandeau li:hover {
+    background-color: var(--button-primary-background);
+    cursor:pointer;
+}
+#bandeau span {
+    line-height: 64px;
+    position: absolute;
+    right: 10px; color:white
+}
+h1 {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 2rem;
+}
+.divMilieu {
+    position: fixed;
+    left: calc(49% - 10rem);
+    border:1px solid var(--bandeau-background);;
+    width:20rem;
+    margin:3rem auto;
+    padding:20px;
+    transition: all 1s linear;
+    overflow:hidden;
+}
+.divGauche {
+    position: fixed;
+    left:-40%;
+    border:1px solid var(--bandeau-background);;
+    width:20rem;
+    margin:3rem auto;
+    padding:20px;
+    transition: all 1s linear;
+}
+.divDroite {
+    position: fixed;
+    left: 100%;
+    border:1px solid var(--bandeau-background);;
+    width:20rem;
+    margin:3rem auto;
+    padding:20px;
+    transition: all 1s linear;}
+.saisie {
+    display:block;
+    margin-bottom:1rem;
+    width:17rem;
+}
+.buttonVert {
+    background-color: var(--button-primary-background);
+    border:0;
+    padding: 8px;
+    margin:2rem 2px;
+    width:8rem;
+    display: block;
+    cursor:pointer;
+}
+.gauche {
+float:left
+}
+.droite {
+float:right
+}
+footer {
+    background-color: var(--bandeau-background);
+    height:1rem;
+    width: 100%;
+    display : table-row;
+    color:white;
+}
+a, a:visited{
+    color:black;
+    text-decoration:none;
+    border-bottom:1px solid var(--button-primary-background);
+}
+
+a:hover {
+    color:black;
+    text-decoration:none;
+    border-bottom:2px solid #9AF55D;
+}
+footer a, footer a:hover, footer a:visited {color:white}
+footer span {float:right; margin-right:10px}

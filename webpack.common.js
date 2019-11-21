@@ -1,22 +1,41 @@
 const webpack = require("webpack");
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const AssetsPlugin = require("assets-webpack-plugin");
 
 module.exports = {
     entry: {
-        main: path.join(__dirname, "src", "js", "index.js")
+        main: path.join(__dirname, "src", "index.js")
     },
 
     output: {
-        path: path.join(__dirname, "dist", "js")
+        path: path.join(__dirname, "tmp/webpack")
     },
 
     module: {
         rules: [
             {
-                test: /\.((png)|(eot)|(woff)|(woff2)|(ttf)|(svg)|(gif))(\?v=\d+\.\d+\.\d+)?$/,
+                test: /\.((png)|(eot)|(woff)|(woff2)|(ttf)|(gif))(\?v=\d+\.\d+\.\d+)?$/,
                 loader: "file-loader?name=/[hash].[ext]"
             },
+
+            {
+                test: /\.svg$/,
+                use: [
+                    {loader: 'file-loader'},
+                    {
+                        loader: 'svgo-loader',
+                        options: {
+                            plugins: [
+                                {removeTitle: true},
+                                {convertColors: {shorthex: false}},
+                                {convertPathData: false}
+                            ]
+                        }
+                    }
+                ]
+            },
+
 
             {test: /\.json$/, loader: "json-loader"},
 
@@ -35,9 +54,16 @@ module.exports = {
         ]
     },
 
+
     plugins: [
         new webpack.ProvidePlugin({
             fetch: "imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch"
+        }),
+
+        new AssetsPlugin({
+            filename: "webpack.json",
+            path: path.join(process.cwd(), "site/data"),
+            prettyPrint: true
         })
     ]
 };

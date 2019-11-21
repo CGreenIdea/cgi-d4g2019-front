@@ -1,0 +1,11 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ $.Site.Title }}</title>
+{{- $stylesheet := .Site.Data.webpack.main -}}
+{{- with $stylesheet.css }}
+<link href="{{ relURL . }}" rel="stylesheet" media="screen">
+<link href="{{ relURL . }}" rel="stylesheet" media="print">
+{{- end }}
+{{- with $stylesheet.js }}
+<script type="module" src="{{ relURL . }}"></script>
+{{- end }}
