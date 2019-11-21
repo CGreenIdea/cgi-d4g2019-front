@@ -3,96 +3,93 @@ title: inscription
 ---
 <script>
 
-  function creationSuivant(num)
-  {
-    changeClass('creation_'+num, "divGauche");
-    changeClass('creation_'+(num+1),"divMilieu");
-  }
-  function creationPrecedent(num)
-  {
-    changeClass('creation_'+num, "divDroite");
-    changeClass('creation_'+(num-1),"divMilieu");
-  }
+    function creationSuivant(num) {
+        changeClass('creation_' + num, "divGauche");
+        changeClass('creation_' + (num + 1), "divMilieu");
+    }
+    function creationPrecedent(num) {
+        changeClass('creation_' + num, "divDroite");
+        changeClass('creation_' + (num - 1), "divMilieu");
+    }
 
-  function changeClass(id, cl)
-  {
-  document.getElementById(id).className = cl;
-  }
+    function changeClass(id, cl) {
+        document.getElementById(id).className = cl;
+    }
 
 </script>
 <h1>Création de compte.</h1>
 
 <div id="creation_1" class="divMilieu">
-<form>
+    <form>
 
-  <label for="nom">Nom</label>
-  <input type="text" class="saisie" id="nom" name="nom">
+        <label for="nom">Nom</label>
+        <input type="text" class="saisie" id="nom" name="nom">
 
-  <label for="prenom">Prénom</label>
-  <input type="text" class="saisie" id="prenom" name="prenom">
+        <label for="prenom">Prénom</label>
+        <input type="text" class="saisie" id="prenom" name="prenom">
 
-  <label for="email">Courriel </label>
-  <input type="email" class="saisie" id="email" name="email">
+        <label for="email">Courriel </label>
+        <input type="email" class="saisie" id="email" name="email">
 
-  <label for="motdepasse">Mot de passe</label>
-  <input type="password" class="saisie" id="motdepasse" name="motdepasse">
+        <label for="motdepasse">Mot de passe</label>
+        <input type="password" class="saisie" id="motdepasse" name="motdepasse">
 
-  <label for="motdepasse">Confirmer le mot de passe</label>
-  <input type="password" class="saisie" id="motdepassebis" name="motdepassebis">
+        <label for="motdepasse">Confirmer le mot de passe</label>
+        <input type="password" class="saisie" id="motdepassebis" name="motdepassebis">
 
-  <input type="button" class="buttonVert droite" value="Suivant" onclick="creationSuivant(1)">
-</form>
+        <input type="button" class="buttonVert droite" value="Suivant" onclick="creationSuivant(1)">
+    </form>
 </div>
 
 <div id="creation_2" class="divDroite">
-  <form>
-  <label for="adresse">Adresse</label>
-  <input type="text" class="saisie" id="adresse" name="adresse">
+    <form>
+        <label for="adresse">Adresse</label>
+        <input type="text" class="saisie" id="adresse" name="adresse">
 
-  <label for="annee">Année</label>
-  <input type="number" class="saisie" id="annee" name="annee">
+        <label for="annee">Année</label>
+        <input type="number" class="saisie" id="annee" name="annee">
 
-  <label for="chauffage">Chauffage </label>
-  <select id="chauffage" class="saisie" name="chauffage">
-    <option></option>
-    <option>gaz</option>
-    <option>fuel</option>
-    <option>électrique</option>
-  </select>
+        <label for="chauffage">Chauffage </label>
+        <select id="chauffage" class="saisie" name="chauffage">
+            <option></option>
+            <option>gaz</option>
+            <option>fuel</option>
+            <option>électrique</option>
+        </select>
 
-  <label for="piece">Nombre de piece</label>
-  <input type="number" class="saisie" id="piece" name="piece">
+        <label for="piece">Nombre de piece</label>
+        <input type="number" class="saisie" id="piece" name="piece">
 
-  <label for="surface">Surface</label>
-  <input type="number" class="saisie" id="surface" name="surface">
+        <label for="surface">Surface</label>
+        <input type="number" class="saisie" id="surface" name="surface">
 
-  <label for="type">Type logement </label>
-  <select id="type" class="saisie" name="type">
-    <option></option>
-    <option>collectif</option>
-    <option>individuel</option>
-  </select>
+        <label for="type">Type logement </label>
+        <select id="type" class="saisie" name="type">
+            <option></option>
+            <option>collectif</option>
+            <option>individuel</option>
+        </select>
 
-  <input type="button" class="buttonVert droite" value="Suivant" onclick="creationSuivant(2)">
-  <input type="button" class="buttonVert gauche" value="Precedent" onclick="creationPrecedent(2)">
+        <input type="button" class="buttonVert droite" value="Suivant" onclick="creationSuivant(2)">
+        <input type="button" class="buttonVert gauche" value="Precedent" onclick="creationPrecedent(2)">
     </form>
 </div>
 
 <div id="creation_3" class="divDroite">
-  <form>
-  <label for="nomP">Nom</label>
-  <input type="text" class="saisie" id="nomP" name="nomP">
+    <form>
+        <label for="nomP">Nom</label>
+        <input type="text" class="saisie" id="nomP" name="nomP">
 
-  <label for="prenomP">Prénom</label>
-  <input type="text" class="saisie" id="prenomP" name="prenomP">
+        <label for="prenomP">Prénom</label>
+        <input type="text" class="saisie" id="prenomP" name="prenomP">
 
-  <label for="societe">Société </label>
-  <input type="email" class="saisie" id="societe" name="societe">
+        <label for="societe">Société </label>
+        <input type="email" class="saisie" id="societe" name="societe">
 
-  <label for="adresseS">Adresse</label>
-  <input type="text" class="saisie" id="adresseS" name="adresseS">
+        <label for="adresseS">Adresse</label>
+        <input type="text" class="saisie" id="adresseS" name="adresseS">
 
-  <input type="button" class="buttonVert droite" value="Terminer" onclick="">
-  <input type="button" class="buttonVert gauche" value="Precedent" onclick="creationPrecedent(3)">
+        <input type="button" class="buttonVert droite" value="Terminer" onclick="">
+        <input type="button" class="buttonVert gauche" value="Precedent" onclick="creationPrecedent(3)">
     </form>
 </div>
