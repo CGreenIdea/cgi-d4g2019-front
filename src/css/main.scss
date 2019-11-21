@@ -3,7 +3,7 @@
 //$font-family-main: Ubuntu, Geneva, Verdana, Tahoma, sans-serif;
 //$font-family-title: 'Ubuntu Condensed', 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans Condensed', 'Helvetica Neue', 'Arial Narrow', Helvetica, Verdana, Arial, sans-serif;
 
-:root-colors{
+:root{
     --button-primary-background: #5fa82f;
     --button-primary-font: #fff;
 
@@ -16,6 +16,8 @@
 
     --text-hyperlink :#097dff;
     --text-watermark: #999999;
+
+    --bandeau-background: grey;
 }
 
 body {
@@ -27,3 +29,61 @@ body {
     line-height: 32px;
     text-rendering: optimizeLegibility;
 }
+
+#bandeau {
+    background-color : var(--bandeau-background);
+    padding: 10px;
+    display : flex;
+}
+#bandeau img {
+    height:64px;
+    margin-right:10px
+}
+#menu {display:none}
+#bandeau ul {list-style : none;}
+#bandeau li {
+    display: inline-block;
+	vertical-align: middle;
+    height:56px;
+    line-height: 56px;
+    padding:4px;
+    background-color: var(--button-secondary-background);
+
+}
+#bandeau li:hover {background-color: var(--button-primary-background)}
+#bandeau span {
+    line-height: 64px;
+    position: absolute;
+    right: 10px; color:white
+}
+h1 {
+    margin-top:1rem;
+    text-align: center;
+    font-size: 2rem;
+}
+#login {
+    border:1px solid var(--bandeau-background);;
+    width:33%;
+    margin:3rem auto;
+    padding:20px;
+
+}
+#login input {
+    display:block;
+    margin-bottom:1rem;
+    width:20rem;
+}
+#login input[type=submit] {
+    background-color: var(--button-primary-background);
+    border:0;
+    padding: 8px;
+    margin:1rem;
+    width:10rem;
+}
+footer {
+    background-color: var(--element-highlight);
+    bottom: 0px;
+    width: 100%;
+    position: absolute;
+}
+footer span {float:right; margin-right:10px}
