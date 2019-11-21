@@ -3,20 +3,28 @@ title: Green l4nterne
 alias:
 - /login
 ---
-<h1>Bienvenue sur green lanterne</h1>
+<h1>Bienvenue sur green l4nterne</h1>
 <br />
 
 <div class="divMilieu">
     Pour acceder à votre compte, veuillez vous identifier.
     <br />
-    <form name="loginForm" id="loginForm">
+    <form name="loginForm" id="loginForm" method="post" action="http://localhost:8080/j_security_check">
         <label for="inpLogin">Identifiant</label>
-        <input type="text" class="inputType" id="inpLogin" name="j_username">
+        <input type="text" class="inputType" id="inpLogin" name="j_username"
+            placeholder="Adresse email"
+            required data-msg-containerid="loginRequiredError" data-required-message="Votre identifiant est obligatoire"
+            data-value-missing="Votre identifiant est obligatoire">
+        <div id="loginRequiredError" class="inputError"></div>
 
         <label for="inpPassword">Mot de passe</label>
-        <input type="password" class="inputType" id="inpPassword" name="j_password">
+        <input type="password" class="inputType" id="inpPassword" name="j_password"
+            placeholder="Mot de passe" required
+            data-msg-containerid="passRequiredError" data-required-message="Votre mot de passe est obligatoire"
+            data-value-missing="Votre mot de passe est obligatoire">
+        <div id="passRequiredError" class="inputError"></div>
 
         <a href="inscription">Créez un compte</a> - <a href="lostpassword">Mot de passe perdu</a>
-        <input type="button" class="greenButton droite" value="Se connecter">
+        <input type="button" class="greenButton droite" value="Se connecter" onclick="submitLogin()">
     </form>
 </div>
