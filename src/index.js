@@ -5,7 +5,8 @@ import './js/index';
 import './css/main.scss';
 
 //import {Constants} from './js/constant.mjs';
-import './js/services.mjs';
+import {callRest} from './js/services.mjs';
+window.callRest = callRest;
 
 import {submitLogin} from './js/login.mjs';
 window.submitLogin = submitLogin;
