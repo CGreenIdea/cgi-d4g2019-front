@@ -6,7 +6,23 @@ title: Ma consomation
 </script>
 <h1>Ma consomation</h1>
 
-<div id="consomois">
-<!-- TODO -->
+<form class="conso">
+  <input type="button" class="gButtonTab greyButton" value="Mois">
+  <input type="button" class="gButtonTab greyButton" value="Trimestre">
+  <input type="button" class="gButtonTab greyButton" value="Année">
+</form>
+
+<div class="conso">
+
+    <form>
+      <label for="dateDebut">Du</label>
+      <input type="date" id="dateDebut">
+      <label for="dateFin"> au </label>
+      <input type="date" id="dateFin">
+      <input type="button" class="gButton greyButton" value="Voir" onclick="generateSVG()">
+    </form>
+
+    <div id="histogramme"></div>
+
 </div>
 

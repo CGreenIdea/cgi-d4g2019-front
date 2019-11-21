@@ -150,7 +150,15 @@ body {
     border-radius: 0 15px;
     font-weight: bold;
 }
-
+.gButtonTab , .gButtonTab:hover{
+    border: 0;
+    padding: 4px;
+    width: 8rem;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 15px 0;
+    font-weight: bold
+}
 .greyButton:hover {
     background-color: var(--button-primary-background);
     color: var(--button-primary-font);
@@ -351,3 +359,24 @@ footer span {
     border-color: #f5c6cb;
     margin-top: 1rem;
 }
+.conso {
+    width:65%;
+    margin:auto;
+    padding:1rem;
+}
+.conso div:first-child {
+    padding: 4px 8px;
+    background-color: var(--element-highlight);
+    width:8rem;
+}
+.conso div:first-child {
+    padding: 4px 8px;
+    background-color: var(--element-highlight);
+    width:8rem;
+}
+.conso input[type=button] {display:inline-block}
+.conso canvas {
+    background:blue;
+    width:100%;
+}
+#histogramme svg {width:100%}

@@ -25,3 +25,5 @@ window.submitSubscriptionForm = submitSubscriptionForm;
 
 import {checkDisclaimer} from './js/inscription.mjs';
 window.checkDisclaimer = checkDisclaimer;
+import {generateSVG} from './js/documents.mjs';
+window.generateSVG = generateSVG;
