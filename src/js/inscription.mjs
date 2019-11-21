@@ -4,14 +4,12 @@ export function slideSubscriptionNext(num) {
     changeClass('creation_' + num, 'divGauche');
     changeClass('creation_' + (num + 1), 'divMilieu');
 }
-//"divGauche"
-// "divMilieu"
+
 export function slideSubscriptionPrevious(num) {
     changeClass('creation_' + num, 'divDroite');
     changeClass('creation_' + (num - 1), 'divMilieu');
 }
-//"divDroite"
-//"divMilieu"
+
 export function checkChangeToOwner(num) {
     if (document.getElementById("subscriptionIsOwner").checked) {
         changeClass('creation_' + num, 'divGauche');
@@ -48,8 +46,6 @@ export function submitSubscriptionForm() {
         let passConfirm = document.getElementById("subscriptionPassConfirm").value;
 
         if (pass === passConfirm) {
-            var xhttp = new XMLHttpRequest();
-
             let home = {
                 city: document.getElementById("subscriptionCity").value,
                 constructionYear: document.getElementById("subscriptionYear").value,
@@ -77,10 +73,17 @@ export function submitSubscriptionForm() {
                 }
             };
 
-            console.log(JSON.stringify(body));
+            //console.log(JSON.stringify(body));
+            var response = callRest('user/register', 'POST', JSON.stringify(body));
+
+            if(response.status != 200 || response.status != 202){
+//TODO
+            }
+
+            /* var xhttp = new XMLHttpRequest();
             xhttp.open("POST", `${Constants.serverBaseUrl}/user/register`, true);
             xhttp.setRequestHeader("Content-type", "application/json");
-            xhttp.send(JSON.stringify(body));
+            xhttp.send(JSON.stringify(body)); */
         }
         else
             console.log("pass check KO");

@@ -6,9 +6,9 @@ export function callRest(serviceUrl, method, jsonData) {
 
     xhttp.onreadystatechange = function () {
         console.log(`Service response status code: ${this.status}`);
-        if (this.readyState == 4 && this.status == 200) {
-            console.log(`Service response text: ${this.responseText}`);
-            return this.responseText;
+        if (this.readyState == 4) {
+            console.log(`Service response: ${this.responseText}`);
+            return { status: this.status, content: this.responseText } ;
         }
     };
 
