@@ -8,7 +8,7 @@ export function callRest(serviceUrl, method, jsonData) {
         console.log(`Service response status code: ${this.status}`);
         if (this.readyState == 4) {
             console.log(`Service response: ${this.responseText}`);
-            return { status: this.status, content: this.responseText } ;
+            return { status: this.status, content: this.responseText };
         }
     };
 
@@ -21,6 +21,9 @@ export function callRest(serviceUrl, method, jsonData) {
     console.log(`Calling service: ${Constants.serverBaseUrl}/${serviceUrl}`);
     console.log(`Service JSON data sent: ${jsonData}`);
 
-    if (jsonData != "")
-        xhttp.send(jsonData);
+    try {
+        if (jsonData != "")
+            xhttp.send(jsonData);
+    }
+    catch { }
 }

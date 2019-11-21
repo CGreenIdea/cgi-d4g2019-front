@@ -40,6 +40,7 @@ export function submitSubscriptionForm() {
     let formHousingValidity = formHousing.checkValidity();
     let formLandloardValidity = formLandloard.checkValidity();
     let isOwner = document.getElementById("subscriptionIsOwner").checked;
+    hideSubscriptionError();
 
     if (formUserValidity && formHousingValidity && document.getElementById("acceptDisclaimer").checked && (isOwner || !isOwner && formLandloardValidity)) {
         let pass = document.getElementById("subscriptionPass").value;
@@ -73,36 +74,37 @@ export function submitSubscriptionForm() {
                 }
             };
 
-            //console.log(JSON.stringify(body));
             var response = callRest('user/register', 'POST', JSON.stringify(body));
 
-            if(response.status != 200 || response.status != 202){
-//TODO
+            if (response.status != 200 || response.status != 202) {
+                displaySubscriptionError(response.content);
+                /* document.getElementById("subscriptionErrorDisplay").style.display = "block";
+                document.getElementById("subscriptionErrorDisplay").innerHTML = response.content; */
             }
-
-            /* var xhttp = new XMLHttpRequest();
-            xhttp.open("POST", `${Constants.serverBaseUrl}/user/register`, true);
-            xhttp.setRequestHeader("Content-type", "application/json");
-            xhttp.send(JSON.stringify(body)); */
+            else {
+                //TODO: redirect
+            }
         }
         else
             console.log("pass check KO");
     }
     else if (!formUserValidity) {
-        console.log("formUserValidity KO");
-        slideSubscriptionPrevious(1);
+        slideSubscriptionPrevious(2);
+        changeClass('creation_4', 'divDroite');
+        displaySubscriptionError("User personal form is not valid");
     }
     else if (!formHousingValidity) {
-        console.log("formHousingValidity KO");
-        slideSubscriptionPrevious(2);
+        slideSubscriptionPrevious(3);
+        changeClass('creation_4', 'divDroite');
+        displaySubscriptionError("Housing form is not valid");
     }
     else if (!isOwner && formLandloardValidity) {
-        console.log("formLandloardValidity KO");
-        slideSubscriptionPrevious(3);
+        slideSubscriptionPrevious(4);
+        changeClass('creation_4', 'divDroite');
+        displaySubscriptionError("Landlord form is not valid");
     }
     else if (!document.getElementById("acceptDisclaimer").checked) {
-        //TODO: display message to user
-        console.log("Accept");
+        displaySubscriptionError("Please accept the conditions");
     }
     else {
         //TODO: display message to user
@@ -127,4 +129,14 @@ function getLandlord() {
             lastName: document.getElementById("subscriptionOwnerLastName").value
         };
     }
+}
+
+function displaySubscriptionError(message) {
+    document.getElementById("subscriptionErrorDisplay").style.display = "block";
+    document.getElementById("subscriptionErrorDisplay").innerHTML = message;
+}
+
+function hideSubscriptionError() {
+    document.getElementById("subscriptionErrorDisplay").style.display = "none";
+    document.getElementById("subscriptionErrorDisplay").innerHTML = "";
 }

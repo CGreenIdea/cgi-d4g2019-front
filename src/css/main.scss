@@ -321,8 +321,33 @@ footer span {
     color: red;
 }
 
-.barreEco img {position: absolute;height:32px}
-#tri_eco_max {left:700px}
-#tri_eco ,#lab_eco{left:350px}
-#lab_eco_max {right:36px}
+.barreEco img {
+    position: absolute;
+    height: 32px;
+}
+#tri_eco_max {
+    left: 700px;
+}
+#tri_eco,
+#lab_eco {
+    left: 350px;
+}
+#lab_eco_max {
+    right: 36px;
+}
 
+.errorBox {
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-radius: 0.25rem;
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    margin-top: 1rem;
+}
