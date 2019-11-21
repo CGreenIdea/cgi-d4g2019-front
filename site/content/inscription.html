@@ -1,95 +1,130 @@
 ---
 title: inscription
 ---
-<script>
 
-    function creationSuivant(num) {
-        changeClass('creation_' + num, "divGauche");
-        changeClass('creation_' + (num + 1), "divMilieu");
-    }
-    function creationPrecedent(num) {
-        changeClass('creation_' + num, "divDroite");
-        changeClass('creation_' + (num - 1), "divMilieu");
-    }
-
-    function changeClass(id, cl) {
-        document.getElementById(id).className = cl;
-    }
-
-</script>
 <h1>Création de compte</h1>
 
 <div id="creation_1" class="divMilieu">
+    <h2>Informations personelles</h2>
     <form>
+        <label for="subscriptionFirstName">Nom</label>
+        <input type="text" class="inputType" id="subscriptionFirstName" name="j_firstname" required />
 
-        <label for="nom">Nom</label>
-        <input type="text" class="inputType" id="nom" name="nom">
+        <label for="subscriptionLastName">Prénom</label>
+        <input type="text" class="inputType" id="subscriptionLastName" name="j_lastname" required />
 
-        <label for="prenom">Prénom</label>
-        <input type="text" class="inputType" id="prenom" name="prenom">
+        <label for="subscriptionEmail">Courriel</label>
+        <input type="email" class="inputType" id="subscriptionEmail" name="j_email" required />
 
-        <label for="email">Courriel </label>
-        <input type="email" class="inputType" id="email" name="email">
+        <label for="subscriptionPass">Mot de passe</label>
+        <input type="password" class="inputType" id="subscriptionPass" name="j_password" required />
 
-        <label for="motdepasse">Mot de passe</label>
-        <input type="password" class="inputType" id="motdepasse" name="motdepasse">
+        <label for="subscriptionPassConfirm">Confirmer le mot de passe</label>
+        <input type="password" class="inputType" id="subscriptionPassConfirm" name="passwordComfirm" required />
 
-        <label for="motdepasse">Confirmer le mot de passe</label>
-        <input type="password" class="inputType" id="motdepassebis" name="motdepassebis">
-
-        <input type="button" class="greenButton droite" value="Suivant" onclick="creationSuivant(1)">
+        <input type="button" class="greenButton droite" value="Suivant"
+            onclick="slideSubscriptionNext(1,'divGauche', 'divMilieu')" />
     </form>
 </div>
 
 <div id="creation_2" class="divDroite">
+    <h2>Votre Logement</h2>
     <form>
-        <label for="adresse">Adresse</label>
-        <input type="text" class="inputType" id="adresse" name="adresse">
-
-        <label for="annee">Année</label>
-        <input type="number" class="inputType" id="annee" name="annee">
-
-        <label for="chauffage">Chauffage </label>
-        <select id="chauffage" class="inputType" name="chauffage">
-            <option></option>
-            <option>Gaz</option>
-            <option>Fuel</option>
-            <option>Electrique</option>
-        </select>
-
-        <label for="piece">Nombre de pièces</label>
-        <input type="number" class="inputType" id="piece" name="piece">
-
-        <label for="surface">Surface</label>
-        <input type="number" class="inputType" id="surface" name="surface">
-
-        <label for="type">Type de logement</label>
-        <select id="type" class="inputType" name="type">
+        <label for="subscriptionHousingType">Type de logement</label>
+        <select id="subscriptionHousingType" class="inputType" name="j_housing_type">
             <option></option>
             <option value="0">Collectif</option>
             <option value="1">Individuel</option>
         </select>
+        <!--
+        <label for="subscriptionAddress">Adresse</label>
+        <input type="text" class="inputType" id="subscriptionAddress" name="j_adress" required />
 
-        <input type="button" class="greenButton droite" value="Suivant" onclick="creationSuivant(2)">
-        <input type="button" class="greenButton gauche" value="Precedent" onclick="creationPrecedent(2)">
+        <label for="subscriptionCity">City</label>
+        <input type="text" class="inputType" id="subscriptionCity" name="j_city" required />
+
+        <label for="subscriptionYear">Année</label>
+        <input type="number" class="inputType" id="subscriptionYear" name="j_year" required />
+ -->
+        <label for="subscriptionHeat">Chauffage</label>
+        <select id="subscriptionHeat" class="inputType" name="j_heatsource">
+            <option></option>
+            <option value="gaz">Gaz</option>
+            <option value="fuel">Fuel</option>
+            <option value="électrique">Electrique</option>
+        </select>
+
+        <label for="subscriptionRooms">Nombre de pièces</label>
+        <input type="number" class="inputType" id="subscriptionRooms" name="j_rooms" required />
+
+        <label for="subscriptionSurface">Surface</label>
+        <input type="number" class="inputType" id="subscriptionSurface" name="j_surface" required />
+
+        <div class="float-left">
+            Êtes-vous propriétaire ?
+        </div>
+        <div class="float-right text-right" style="margin-right: 10px;">
+            <label class="switch">
+                <input type="checkbox" id="subscriptionIsOwner">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+        <div>
+            <input type="button" class="greenButton droite" value="Suivant"
+                onclick="checkChangeToOwner(2, 'divGauche', 'divMilieu')">
+
+            <input type="button" class="greenButton gauche" value="Precedent"
+                onclick="slideSubscriptionPrevious(2, 'divDroite', 'divMilieu')">
+        </div>
     </form>
 </div>
 
 <div id="creation_3" class="divDroite">
+    <h2>Propriétaire</h2>
     <form>
-        <label for="nomP">Nom</label>
-        <input type="text" class="inputType" id="nomP" name="nomP">
+        <label for="subscriptionOwnerName">Nom</label>
+        <input type="text" class="inputType" id="subscriptionOwnerName" name="j_owner_name" required>
 
-        <label for="prenomP">Prénom</label>
-        <input type="text" class="inputType" id="prenomP" name="prenomP">
+        <label for="subscriptionOwnerLastName">Prénom</label>
+        <input type="text" class="inputType" id="subscriptionOwnerLastName" name="j_owner_lastname">
 
-        <label for="societe">Société </label>
-        <input type="email" class="inputType" id="societe" name="societe">
+        <label for="subscriptionOwnerCompany">Société</label>
+        <input type="email" class="inputType" id="subscriptionOwnerCompany" name="j_owner_company">
 
-        <label for="adresseS">Adresse</label>
-        <input type="text" class="inputType" id="adresseS" name="adresseS">
+        <label for="subscriptionOwnerAddress">Adresse</label>
+        <input type="text" class="inputType" id="subscriptionOwnerAddress" name="j_owner_address">
 
-        <input type="button" class="greenButton droite" value="Terminer" onclick="">
-        <input type="button" class="greenButton gauche" value="Precedent" onclick="creationPrecedent(3)">
+        <div>
+            <input type="button" class="greenButton droite" value="Suivant"
+                onclick="slideSubscriptionNext(3, 'divGauche', 'divMilieu')">
+            <input type="button" class="greenButton gauche" value="Precedent"
+                onclick="slideSubscriptionPrevious(3, 'divDroite', 'divMilieu')">
+        </div>
+    </form>
+</div>
+
+<!--  TODO: Disclaimer and submit -->
+<div id="creation_4" class="divDroite">
+    <form>
+        <h2>Information</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua.
+        </p>
+        <div class="float-left" style="margin-right: 10px;">
+            <label class="switch">
+                <input type="checkbox" id="acceptDisclaimer">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <div class="float-right">
+            J'accepte
+        </div>
+        <div>
+                <input type="button" class="greenButton droite" value="S'enregistrer">
+                <input type="button" class="greenButton gauche" value="Precedent"
+                    onclick="slideSubscriptionPrevious(4, 'divDroite', 'divMilieu')">
+            </div>
     </form>
 </div>

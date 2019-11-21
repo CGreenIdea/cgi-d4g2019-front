@@ -11,15 +11,14 @@ alias:
     <br />
     <form name="loginForm" id="loginForm" method="post" action="http://localhost:8080/j_security_check">
         <label for="inpLogin">Identifiant</label>
-        <input type="text" class="inputType" id="inpLogin" name="j_username"
-            placeholder="Adresse email"
-            required data-msg-containerid="loginRequiredError" data-required-message="Votre identifiant est obligatoire"
-            data-value-missing="Votre identifiant est obligatoire">
+        <input type="text" class="inputType" id="inpLogin" name="j_username" placeholder="Adresse email"
+            validationMessage="Votre identifiant est obligatoire"
+            valueMissing="Votre identifiant est obligatoire"
+            required data-msg-containerid="loginRequiredError">
         <div id="loginRequiredError" class="inputError"></div>
 
         <label for="inpPassword">Mot de passe</label>
-        <input type="password" class="inputType" id="inpPassword" name="j_password"
-            placeholder="Mot de passe" required
+        <input type="password" class="inputType" id="inpPassword" name="j_password" placeholder="Mot de passe" required
             data-msg-containerid="passRequiredError" data-required-message="Votre mot de passe est obligatoire"
             data-value-missing="Votre mot de passe est obligatoire">
         <div id="passRequiredError" class="inputError"></div>
