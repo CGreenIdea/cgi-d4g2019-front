@@ -1,8 +1,5 @@
 @import "partials/reset";
 
-//$font-family-main: Ubuntu, Geneva, Verdana, Tahoma, sans-serif;
-//$font-family-title: 'Ubuntu Condensed', 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans Condensed', 'Helvetica Neue', 'Arial Narrow', Helvetica, Verdana, Arial, sans-serif;
-
 :root {
     --button-primary-background: #5fa82f;
     --button-primary-font: #fff;
@@ -18,6 +15,9 @@
     --text-watermark: #999999;
 
     --bandeau-background: #58075c;
+
+    --font-family-main: Ubuntu, Geneva, Verdana, Tahoma, sans-serif;
+    --font-family-title: 'Ubuntu Condensed', 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans Condensed', 'Helvetica Neue', 'Arial Narrow', Helvetica, Verdana, Arial, sans-serif;
 }
 html {
     height: 100%;
@@ -120,6 +120,7 @@ h1 {
     width: 8rem;
     display: block;
     cursor: pointer;
+    color: var(--button-primary-font);
 }
 .gauche {
     float: left;
