@@ -1,4 +1,8 @@
-const serverBaseUrl = "http://localhost:8080/";
+
+import {Constants} from './constant.mjs';
+
+console.log("services");
+console.log(`${Constants.serverBaseUrl}`);
 
 function callRest(serviceUrl, method, jsonData){
     var xhttp = new XMLHttpRequest();
@@ -13,7 +17,7 @@ function callRest(serviceUrl, method, jsonData){
     //TODO: see if headers are needed
     //TODO: pass cookie auth
 
-    xhttp.open(method, serverBaseUrl + "/" + serviceUrl, true);
+    xhttp.open(method, `${serverBaseUrl}`/`${serviceUrl}`, true);
     xhttp.setRequestHeader("Content-type", "application/json");
 
     if(jsonData != "")
