@@ -4,18 +4,19 @@ alias:
 - /login
 ---
 <h1>Bienvenue sur green lanterne</h1>
-<br>
+<br />
 
 <div class="divMilieu">
-Pour acceder à votre compte, veuillez vous identifier.
-<br><br>
-<form>
-  <label for="identifiant">Identifiant</label>
-  <input type="text" class="saisie" id="identifiant" name="identifiant">
-  <label for="motdepasse">Mot de passe</label>
-  <input type="password" class="saisie" id="motdepasse" name="motdepasse">
-  <a href="inscription">Créez un compte</a> - <a href="lostpassword">Mot de passe perdu</a>
-  <input type="button" class="greenButton droite" value="Se connecter">
+    Pour acceder à votre compte, veuillez vous identifier.
+    <br />
+    <form name="loginForm" id="loginForm">
+        <label for="inpLogin">Identifiant</label>
+        <input type="text" class="inputType" id="inpLogin" name="j_username">
 
-</form>
+        <label for="inpPassword">Mot de passe</label>
+        <input type="password" class="inputType" id="inpPassword" name="j_password">
+
+        <a href="inscription">Créez un compte</a> - <a href="lostpassword">Mot de passe perdu</a>
+        <input type="button" class="greenButton droite" value="Se connecter">
+    </form>
 </div>
