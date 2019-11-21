@@ -202,7 +202,7 @@ footer {
     cursor:pointer;
 }
 h1 {
-    margin-top: 2rem;
+    margin: 3rem 0 4rem 0;
     text-align: center;
     font-size: 2rem;
 
@@ -241,3 +241,37 @@ footer span {
 .text-right{
     text-align:right;
 }
+.barreEco {
+    width:768px;
+    margin:auto;
+    height: 48px;
+    position: relative;
+}
+.barreEco div {
+    height:32px;
+    width:128px;
+    border-radius:15px;
+    position: absolute;
+}
+.barreEco span {
+    height: 32px;
+    border-radius: 15px;
+    position: absolute;
+    padding: 0 8px;
+    max-width: 22rem;
+    min-width: 5rem;
+}
+.eco_G {background:#ED2124;left:600px}
+.eco_F {background:#F99839;left:500px}
+.eco_E {background:#FECD06;left:400px}
+.eco_D {background:#F6EB15;left:300px}
+.eco_C {background:#CADB2A;left:200px}
+.eco_B {background:#51B84B;left:100px}
+.eco_A {background:#349A47}
+
+.labelHaut {border:2px solid var(--button-primary-background)}
+
+.barreEco img {position: absolute;height:32px}
+#tri_eco_max {left:700px}
+#tri_eco ,#lab_eco{left:350px}
+#lab_eco_max {right:36px}
