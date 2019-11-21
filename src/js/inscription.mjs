@@ -34,15 +34,15 @@ function changeClass(id, cl) {
 export function submitSubscriptionForm() {
     let formUser = document.getElementById("subscriptionFormUser");
     let formHousing = document.getElementById("subscriptionFormHousing");
-    let formLandloard = document.getElementById("subscriptionFormLandlord");
+    let formLandlord = document.getElementById("subscriptionFormLandlord");
 
     let formUserValidity = formUser.checkValidity();
     let formHousingValidity = formHousing.checkValidity();
-    let formLandloardValidity = formLandloard.checkValidity();
+    let formLandlordValidity = formLandlord.checkValidity();
     let isOwner = document.getElementById("subscriptionIsOwner").checked;
     hideSubscriptionError();
 
-    if (formUserValidity && formHousingValidity && document.getElementById("acceptDisclaimer").checked && (isOwner || !isOwner && formLandloardValidity)) {
+    if (formUserValidity && formHousingValidity && document.getElementById("acceptDisclaimer").checked && (isOwner || !isOwner && formLandlordValidity)) {
         let pass = document.getElementById("subscriptionPass").value;
         let passConfirm = document.getElementById("subscriptionPassConfirm").value;
 
@@ -78,8 +78,6 @@ export function submitSubscriptionForm() {
 
             if (response.status != 200 || response.status != 202) {
                 displaySubscriptionError(response.content);
-                /* document.getElementById("subscriptionErrorDisplay").style.display = "block";
-                document.getElementById("subscriptionErrorDisplay").innerHTML = response.content; */
             }
             else {
                 //TODO: redirect
@@ -98,7 +96,7 @@ export function submitSubscriptionForm() {
         changeClass('creation_4', 'divDroite');
         displaySubscriptionError("Housing form is not valid");
     }
-    else if (!isOwner && formLandloardValidity) {
+    else if (!isOwner && formLandlordValidity) {
         slideSubscriptionPrevious(4);
         changeClass('creation_4', 'divDroite');
         displaySubscriptionError("Landlord form is not valid");
@@ -109,6 +107,7 @@ export function submitSubscriptionForm() {
     else {
         //TODO: display message to user
         console.log("HO OH");
+        displaySubscriptionError("An error that shouldn't happen, happened. Please contact the helpdesk.");
     }
 }
 
