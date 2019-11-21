@@ -12,11 +12,7 @@
 
     gris trés foncé: #222
     gris clair: #e4e4e4
-
-
-
 */
-
 
 :root {
     --button-primary-background: #5fa82f;
@@ -73,7 +69,9 @@ body {
 #bandeau a:hover {
     border: 0px;
 }
-#bandeau ul {list-style: none;}
+#bandeau ul {
+    list-style: none;
+}
 #bandeau li {
     display: inline-block;
     vertical-align: middle;
@@ -118,7 +116,7 @@ body {
     left: -50%;
     border: 1px solid var(--bandeau-background);
     width: 20rem;
-    margin:0;
+    margin: 0;
     padding: 20px;
     transition: all 0.8s linear;
     overflow: hidden;
@@ -129,7 +127,7 @@ body {
     left: 100%;
     border: 1px solid var(--bandeau-background);
     width: 20rem;
-    margin:0;
+    margin: 0;
     padding: 20px;
     transition: all 0.8s linear;
     overflow: hidden;
@@ -141,7 +139,8 @@ body {
     width: 95%;
 }
 
-.gButton , .gButton:hover{
+.gButton,
+.gButton:hover {
     border: 0;
     padding: 8px;
     margin: 2rem 2px;
@@ -149,20 +148,20 @@ body {
     display: block;
     cursor: pointer;
     border-radius: 0 15px;
-    font-weight: bold
+    font-weight: bold;
 }
 
 .greyButton:hover {
     background-color: var(--button-primary-background);
-    color: var(--button-primary-font)
+    color: var(--button-primary-font);
 }
 .greyButton {
     background-color: var(--bottom-menu-background);
-    color: var(--button-primary-font)
+    color: var(--button-primary-font);
 }
 .greenButton:hover {
     background-color: var(--button-primary-background);
-    color: var(--button-primary-font)
+    color: var(--button-primary-font);
 }
 .greenButton {
     background-color: var(--element-highlight);
@@ -175,7 +174,10 @@ body {
 .droite {
     float: right;
 }
-.milieu { width:60%; margin:3rem auto}
+.milieu {
+    width: 60%;
+    margin: 3rem auto;
+}
 footer {
     background-color: var(--bottom-menu-background);
     height: 1rem;
@@ -185,27 +187,34 @@ footer {
 }
 
 #listfiles {
-    margin-top:2rem;
-    width:85%;
-    margin:auto
+    margin-top: 2rem;
+    width: 85%;
+    margin: auto;
 }
 .file {
     padding: 8px;
-    display:flex
+    display: flex;
 }
-.file img {height:48px}
-.file span {padding:8px}
-.file span{width:100%}
-.file span:last-child {width:4rem}
+.file img {
+    height: 48px;
+}
+.file span {
+    padding: 8px;
+}
+.file span {
+    width: 100%;
+}
+.file span:last-child {
+    width: 4rem;
+}
 .file:hover {
-    background-color:var(--element-hover);
-    cursor:pointer;
+    background-color: var(--element-hover);
+    cursor: pointer;
 }
 h1 {
     margin: 3rem 0 4rem 0;
     text-align: center;
     font-size: 2rem;
-
 }
 a,
 a:visited {
@@ -230,27 +239,27 @@ footer span {
     float: right;
     margin-right: 10px;
 }
-.float-right{
+.float-right {
     float: right;
 }
 
-.float-left{
+.float-left {
     float: left;
 }
 
-.text-right{
-    text-align:right;
+.text-right {
+    text-align: right;
 }
 .barreEco {
-    width:768px;
-    margin:auto;
+    width: 768px;
+    margin: auto;
     height: 48px;
     position: relative;
 }
 .barreEco div {
-    height:32px;
-    width:128px;
-    border-radius:15px;
+    height: 32px;
+    width: 128px;
+    border-radius: 15px;
     position: absolute;
 }
 .barreEco span {
@@ -261,21 +270,59 @@ footer span {
     max-width: 22rem;
     min-width: 5rem;
 }
-.eco_G {background:#ED2124;left:600px}
-.eco_F {background:#F99839;left:500px}
-.eco_E {background:#FECD06;left:400px}
-.eco_D {background:#F6EB15;left:300px}
-.eco_C {background:#CADB2A;left:200px}
-.eco_B {background:#51B84B;left:100px}
-.eco_A {background:#349A47}
+.eco_G {
+    background: #ed2124;
+    left: 600px;
+}
+.eco_F {
+    background: #f99839;
+    left: 500px;
+}
+.eco_E {
+    background: #fecd06;
+    left: 400px;
+}
+.eco_D {
+    background: #f6eb15;
+    left: 300px;
+}
+.eco_C {
+    background: #cadb2a;
+    left: 200px;
+}
+.eco_B {
+    background: #51b84b;
+    left: 100px;
+}
+.eco_A {
+    background: #349a47;
+}
 
-.labelHaut {border:2px solid var(--button-primary-background)}
+.labelHaut {
+    border: 2px solid var(--button-primary-background);
+}
+
+.barreEco img {
+    position: absolute;
+    height: 32px;
+}
+#tri_eco_max {
+    left: 700px;
+}
+#tri_eco,
+#lab_eco {
+    left: 350px;
+}
+#lab_eco_max {
+    right: 36px;
+}
+
+.required_field {
+    color: red;
+}
 
 .barreEco img {position: absolute;height:32px}
 #tri_eco_max {left:700px}
 #tri_eco ,#lab_eco{left:350px}
 #lab_eco_max {right:36px}
 
-#consomois {
-
-}
