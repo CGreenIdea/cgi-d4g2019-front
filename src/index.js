@@ -18,6 +18,11 @@ window.slideSubscriptionPrevious = slideSubscriptionPrevious;
 
 import {checkChangeToOwner} from './js/inscription.mjs';
 window.checkChangeToOwner = checkChangeToOwner;
+<<<<<<< HEAD
 
 import {submitSubscriptionForm} from './js/inscription.mjs';
 window.submitSubscriptionForm = submitSubscriptionForm;
+=======
+import {checkDisclaimer} from './js/inscription.mjs';
+window.checkDisclaimer = checkDisclaimer;
+>>>>>>> 20d82d20cdc529d6b68cd2bb5103609850a665bd
