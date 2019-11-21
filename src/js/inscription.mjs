@@ -34,21 +34,23 @@ function changeClass(id, cl) {
 }
 
 export function submitSubscriptionForm() {
-    let form = document.getElementById("subscriptionFormUser");
-    if (form.checkValidity()) {
+    let formUser = document.getElementById("subscriptionFormUser");
+    let formHousing = document.getElementById("subscriptionFormHousing");
+    let formLandloard = document.getElementById("subscriptionFormLandlord");
+
+    let formUserValidity = formUser.checkValidity();
+    let formHousingValidity = formHousing.checkValidity();
+    let formLandloardValidity = formLandloard.checkValidity();
+    let isOwner = document.getElementById("subscriptionIsOwner").checked;
+
+    if (formUserValidity && formHousingValidity && document.getElementById("acceptDisclaimer").checked && (isOwner || !isOwner && formLandloardValidity)) {
         let pass = document.getElementById("subscriptionPass").value;
         let passConfirm = document.getElementById("subscriptionPassConfirm").value;
 
-        if (pass == passConfirm) {
+        if (pass === passConfirm) {
             var xhttp = new XMLHttpRequest();
 
-            var user = {
-                username: document.getElementById("subscriptionEmail").value,
-                password: pass,
-                passwordConfirm: passConfirm
-            }
-
-            var home = {
+            let home = {
                 city: document.getElementById("subscriptionCity").value,
                 constructionYear: document.getElementById("subscriptionYear").value,
                 heatSource: document.getElementById("subscriptionHeat").value,
@@ -61,14 +63,18 @@ export function submitSubscriptionForm() {
                 streetNb: ""
             }
 
-            var body = {
+            let body = {
                 home: home,
                 landlord: getLandlord(),
                 tenant: {
                     firstName: document.getElementById("subscriptionFirstName").value,
                     lastName: document.getElementById("subscriptionLastName").value
                 },
-                user: user
+                user: {
+                    username: document.getElementById("subscriptionEmail").value,
+                    password: pass,
+                    passwordConfirm: passConfirm
+                }
             };
 
             console.log(JSON.stringify(body));
@@ -79,8 +85,24 @@ export function submitSubscriptionForm() {
         else
             console.log("pass check KO");
     }
-    else
-        form.submit();
+    else if (!formUserValidity) {
+        console.log("formUserValidity KO");
+        slideSubscriptionPrevious(1);
+    }
+    else if (!formHousingValidity) {
+        console.log("formHousingValidity KO");
+        slideSubscriptionPrevious(2);
+    }
+    else if (!isOwner && formLandloardValidity) {
+        console.log("formLandloardValidity KO");
+        slideSubscriptionPrevious(3);
+    }
+    else if (!document.getElementById("acceptDisclaimer").checked) {
+        alert("ACCEPT !!!!");
+    }
+    else {
+        console.log("HO OH");
+    }
 }
 
 function getLandlord() {
@@ -100,5 +122,4 @@ function getLandlord() {
             lastName: document.getElementById("subscriptionOwnerLastName").value
         };
     }
-
 }

@@ -7,20 +7,23 @@ title: inscription
     <div id="creation_1" class="divMilieu">
         <h2>Informations personelles</h2>
         <form id="subscriptionFormUser" method="POST">
-            <label for="subscriptionFirstName">Nom</label>
-            <input type="text" class="inputType" id="subscriptionFirstName" name="j_firstname" required />
+            <label for="subscriptionFirstName">Nom</label>&nbsp;<span class="required_field">*</span>
+            <input type="text" class="inputType" id="subscriptionFirstName" name="j_firstname" required
+                maxlength="255" />
 
-            <label for="subscriptionLastName">Prénom</label>
-            <input type="text" class="inputType" id="subscriptionLastName" name="j_lastname" required />
+            <label for="subscriptionLastName">Prénom</label>&nbsp;<span class="required_field">*</span>
+            <input type="text" class="inputType" id="subscriptionLastName" name="j_lastname" required maxlength="255" />
 
-            <label for="subscriptionEmail">Courriel</label>
-            <input type="email" class="inputType" id="subscriptionEmail" name="j_email" required />
+            <label for="subscriptionEmail">Courriel</label>&nbsp;<span class="required_field">*</span>
+            <input type="email" class="inputType" id="subscriptionEmail" name="j_email" required maxlength="255" />
 
-            <label for="subscriptionPass">Mot de passe</label>
-            <input type="password" class="inputType" id="subscriptionPass" name="j_password" required />
+            <label for="subscriptionPass">Mot de passe</label>&nbsp;<span class="required_field">*</span>
+            <input type="password" class="inputType" id="subscriptionPass" name="j_password" required maxlength="255" />
 
-            <label for="subscriptionPassConfirm">Confirmer le mot de passe</label>
-            <input type="password" class="inputType" id="subscriptionPassConfirm" name="passwordComfirm" required />
+            <label for="subscriptionPassConfirm">Confirmer le mot de passe</label>&nbsp;<span
+                class="required_field">*</span>
+            <input type="password" class="inputType" id="subscriptionPassConfirm" name="passwordComfirm" required
+                maxlength="255" />
 
             <input type="button" class="gButton greenButton droite" value="Suivant"
                 onclick="slideSubscriptionNext(1)" />
@@ -30,39 +33,39 @@ title: inscription
     <div id="creation_2" class="divDroite">
         <h2>Votre Logement</h2>
         <form method="POST" id="subscriptionFormHousing">
-            <label for="subscriptionHousingType">Type de logement</label>
-            <select id="subscriptionHousingType" class="inputType" name="j_housing_type">
-                <option>-</option>
+            <label for="subscriptionHousingType">Type de logement</label>&nbsp;<span class="required_field">*</span>
+            <select id="subscriptionHousingType" class="inputType" name="j_housing_type" required>
+                <option value="">-</option>
                 <option value="0">Maison</option>
                 <option value="1">Appartement</option>
             </select>
 
-            <label for="subscriptionAddress">Adresse</label>
-            <input type="text" class="inputType" id="subscriptionAddress" name="j_adress" required />
+            <label for="subscriptionAddress">Adresse</label>&nbsp;<span class="required_field">*</span>
+            <input type="text" class="inputType" id="subscriptionAddress" name="j_adress" required maxlength="255" />
 
-            <label for="subscriptionZipCode">Code Postal</label>
-            <input type="text" class="inputType" id="subscriptionZipCode" name="j_zipcode" required />
+            <label for="subscriptionZipCode">Code Postal</label>&nbsp;<span class="required_field">*</span>
+            <input type="text" class="inputType" id="subscriptionZipCode" name="j_zipcode" required maxlength="255" />
 
-            <label for="subscriptionCity">Ville</label>
-            <input type="text" class="inputType" id="subscriptionCity" name="j_city" required />
+            <label for="subscriptionCity">Ville</label>&nbsp;<span class="required_field">*</span>
+            <input type="text" class="inputType" id="subscriptionCity" name="j_city" required maxlength="255" />
 
-            <label for="subscriptionYear">Année</label>
-            <input type="number" class="inputType" id="subscriptionYear" name="j_year" required />
+            <label for="subscriptionYear">Année</label>&nbsp;<span class="required_field">*</span>
+            <input type="number" class="inputType" id="subscriptionYear" name="j_year" required min="1000" max="2030" />
 
-            <label for="subscriptionHeat">Chauffage</label>
-            <select id="subscriptionHeat" class="inputType" name="j_heatsource">
-                <option>-</option>
+            <label for="subscriptionHeat">Chauffage</label>&nbsp;<span class="required_field">*</span>
+            <select id="subscriptionHeat" class="inputType" name="j_heatsource" required>
+                <option value="">-</option>
                 <option value="gaz">Gaz</option>
                 <option value="fuel">Fuel</option>
                 <option value="électricité">Electrique</option>
             </select>
 
-            <label for="subscriptionRooms">Nombre de pièces</label>
-            <input type="number" class="inputType" id="subscriptionRooms" name="j_rooms" required />
+            <label for="subscriptionRooms">Nombre de pièces</label>&nbsp;<span class="required_field">*</span>
+            <input type="number" class="inputType" id="subscriptionRooms" name="j_rooms" required min="1" max="99" />
 
-            <label for="subscriptionSurface">Surface</label>
-            <input type="number" class="inputType" id="subscriptionSurface" name="j_surface" required />
-
+            <label for="subscriptionSurface">Surface</label>&nbsp;<span class="required_field">*</span>
+            <input type="number" class="inputType" id="subscriptionSurface" name="j_surface" required min="1"
+                max="9999" />
 
             <div class="float-left text-right switch">
                 <label>
@@ -82,18 +85,19 @@ title: inscription
     <div id="creation_3" class="divDroite">
         <h2>Propriétaire</h2>
         <form method="POST" id="subscriptionFormLandlord">
-            <label for="subscriptionOwnerName">Nom</label>
-            <input type="text" class="inputType" id="subscriptionOwnerName" name="j_owner_name" required>
+            <label for="subscriptionOwnerName">Nom</label>&nbsp;<span class="required_field">*</span>
+            <input type="text" class="inputType" id="subscriptionOwnerName" name="j_owner_name" required
+                maxlength="255">
 
             <label for="subscriptionOwnerLastName">Prénom</label>
-            <input type="text" class="inputType" id="subscriptionOwnerLastName" name="j_owner_lastname">
+            <input type="text" class="inputType" id="subscriptionOwnerLastName" name="j_owner_lastname" maxlength="255">
 
             <label for="subscriptionOwnerCompany">Société</label>
-            <input type="email" class="inputType" id="subscriptionOwnerCompany" name="j_owner_company">
+            <input type="email" class="inputType" id="subscriptionOwnerCompany" name="j_owner_company" maxlength="255">
 
-            <label for="subscriptionOwnerAddress">Adresse</label>
-            <input type="text" class="inputType" id="subscriptionOwnerAddress" name="j_owner_address">
-
+            <label for="subscriptionOwnerAddress">Adresse</label>&nbsp;<span class="required_field">*</span>
+            <input type="text" class="inputType" id="subscriptionOwnerAddress" name="j_owner_address" required
+                maxlength="255">
 
             <input type="button" class="gButton greenButton droite" value="Suivant" onclick="slideSubscriptionNext(3)">
             <input type="button" class="gButton greyButton gauche" value="Precedent"
@@ -104,7 +108,7 @@ title: inscription
     <!--  TODO: Disclaimer and submit -->
     <div id="creation_4" class="divDroite">
         <h2>Information</h2>
-        <form method="POST">
+        <form method="POST" id="subscriptionFormRGPD">
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua.
@@ -115,10 +119,10 @@ title: inscription
                     <span class="slider round"></span>
                 </label>
             </div>
-
             J'accepte
             <br>
-            <input type="button" class="gButton greyButton droite" id="finish" value="S'enregistrer" onclick="submitSubscriptionForm()">
+            <input type="button" class="gButton greyButton droite" id="finish" value="S'enregistrer"
+                onclick="submitSubscriptionForm()">
             <input type="button" class="gButton greyButton gauche" value="Precedent"
                 onclick="slideSubscriptionPrevious(4)">
         </form>
