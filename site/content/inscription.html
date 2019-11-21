@@ -17,7 +17,7 @@ title: inscription
     }
 
 </script>
-<h1>Création de compte.</h1>
+<h1>Création de compte</h1>
 
 <div id="creation_1" class="divMilieu">
     <form>
@@ -52,22 +52,22 @@ title: inscription
         <label for="chauffage">Chauffage </label>
         <select id="chauffage" class="saisie" name="chauffage">
             <option></option>
-            <option>gaz</option>
-            <option>fuel</option>
-            <option>électrique</option>
+            <option>Gaz</option>
+            <option>Fuel</option>
+            <option>Electrique</option>
         </select>
 
-        <label for="piece">Nombre de piece</label>
+        <label for="piece">Nombre de pièces</label>
         <input type="number" class="saisie" id="piece" name="piece">
 
         <label for="surface">Surface</label>
         <input type="number" class="saisie" id="surface" name="surface">
 
-        <label for="type">Type logement </label>
+        <label for="type">Type de logement</label>
         <select id="type" class="saisie" name="type">
             <option></option>
-            <option>collectif</option>
-            <option>individuel</option>
+            <option value="0">Collectif</option>
+            <option value="1">Individuel</option>
         </select>
 
         <input type="button" class="buttonVert droite" value="Suivant" onclick="creationSuivant(2)">
