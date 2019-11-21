@@ -17,7 +17,7 @@ function callRest(serviceUrl, method, jsonData){
     //TODO: see if headers are needed
     //TODO: pass cookie auth
 
-    xhttp.open(method, `${serverBaseUrl}`/`${serviceUrl}`, true);
+    xhttp.open(method, `${serverBaseUrl}/${serviceUrl}`, true);
     xhttp.setRequestHeader("Content-type", "application/json");
 
     if(jsonData != "")
