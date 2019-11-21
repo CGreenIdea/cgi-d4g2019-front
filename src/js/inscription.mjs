@@ -98,9 +98,11 @@ export function submitSubscriptionForm() {
         slideSubscriptionPrevious(3);
     }
     else if (!document.getElementById("acceptDisclaimer").checked) {
-        alert("ACCEPT !!!!");
+        //TODO: display message to user
+        console.log("Accept");
     }
     else {
+        //TODO: display message to user
         console.log("HO OH");
     }
 }
