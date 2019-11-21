@@ -14,10 +14,13 @@
     --text-hyperlink: #097dff;
     --text-watermark: #999999;
 
-    --bandeau-background: #58075c;
+    --bandeau-background: #e4e4e4;
+    --bottom-menu-background: #999999;
 
     --font-family-main: Ubuntu, Geneva, Verdana, Tahoma, sans-serif;
-    --font-family-title: 'Ubuntu Condensed', 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans Condensed', 'Helvetica Neue', 'Arial Narrow', Helvetica, Verdana, Arial, sans-serif;
+    --font-family-title: "Ubuntu Condensed", "Segoe UI", Frutiger,
+        "Frutiger Linotype", "Dejavu Sans Condensed", "Helvetica Neue",
+        "Arial Narrow", Helvetica, Verdana, Arial, sans-serif;
 }
 html {
     height: 100%;
@@ -37,7 +40,7 @@ body {
 
 #bandeau {
     background-color: var(--bandeau-background);
-    padding: 10px;
+    padding: 10px 10px 2px 10px;
     display: flex;
 }
 #bandeau img {
@@ -49,9 +52,6 @@ body {
 #bandeau a:hover {
     border: 0px;
 }
-#menu {
-    display: none;
-}
 #bandeau ul {
     list-style: none;
 }
@@ -61,24 +61,28 @@ body {
     height: 56px;
     line-height: 56px;
     padding: 4px;
-    background-color: var(--button-secondary-background);
+    //background-color: var(--button-secondary-background);
 }
 
 #bandeau li:hover {
-    background-color: var(--button-primary-background);
+    //background-color: var(--button-primary-background);
     cursor: pointer;
+    border-bottom: 1px solid var(--button-primary-background);
 }
+
 #bandeau span {
     line-height: 64px;
     position: absolute;
     right: 10px;
     color: white;
 }
+
 h1 {
     margin-top: 1rem;
     text-align: center;
     font-size: 2rem;
 }
+
 .divMilieu {
     position: fixed;
     left: calc(49% - 10rem);
@@ -89,6 +93,7 @@ h1 {
     transition: all 1s linear;
     overflow: hidden;
 }
+
 .divGauche {
     position: fixed;
     left: -40%;
@@ -98,6 +103,7 @@ h1 {
     padding: 20px;
     transition: all 1s linear;
 }
+
 .divDroite {
     position: fixed;
     left: 100%;
@@ -107,12 +113,14 @@ h1 {
     padding: 20px;
     transition: all 1s linear;
 }
+
 .saisie {
     display: block;
     margin-bottom: 1rem;
     width: 17rem;
 }
-.buttonVert {
+
+.greenButton {
     background-color: var(--button-primary-background);
     border: 0;
     padding: 8px;
@@ -121,20 +129,26 @@ h1 {
     display: block;
     cursor: pointer;
     color: var(--button-primary-font);
+    border-radius: 15px;
+    font-weight: bold;
 }
+
 .gauche {
     float: left;
 }
+
 .droite {
     float: right;
 }
+
 footer {
-    background-color: var(--bandeau-background);
+    background-color: var(--bottom-menu-background);
     height: 1rem;
     width: 100%;
     display: table-row;
     color: white;
 }
+
 a,
 a:visited {
     color: black;
@@ -147,11 +161,13 @@ a:hover {
     text-decoration: none;
     border-bottom: 2px solid #9af55d;
 }
+
 footer a,
 footer a:hover,
 footer a:visited {
     color: white;
 }
+
 footer span {
     float: right;
     margin-right: 10px;
