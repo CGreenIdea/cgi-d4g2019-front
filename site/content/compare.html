@@ -1,12 +1,12 @@
 ---
 title: Me comparer
 ---
-<h1>Comparer ma consomation</h1>
+<h1>Comparer ma consommation</h1>
 
 
 <div class="barreEco">
-  <span id="lab_eco_min" class="labelHaut">min : 0</span>
-  <span id="lab_eco_max" class="labelHaut">max : 100</span>
+  <span id="lab_eco_min" class="labelHaut">min : 0 kWh</span>
+  <span id="lab_eco_max" class="labelHaut">max : 10 000 kWh</span>
 </div>
 
 <div class="barreEco">
@@ -31,5 +31,10 @@ title: Me comparer
   <span id="lab_eco" class="labelHaut">moy : 350</span>
 </div>
 
-<p class="divMilieu">Vous consomer moins que 50% des foyer du meme type.
-</p>
+<p class="divMilieu">Vous consommez moins que 50% des foyers du même type.</p>
+
+<script>
+    window.addEventListener('load', function () {
+        callCompare();
+    })
+</script>
