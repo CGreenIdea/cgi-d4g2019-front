@@ -13,9 +13,6 @@ export function checkUser() {
         document.getElementById("menu").style.display = "none";
         document.getElementById("power").style.display = "none";
         document.getElementById("utilisateur").innerHTML = "";
-        /*if(window.location.pathname != "/" || window.location.pathname != "/inscription/")document.location = '/';*/
-
-
     } else {
         document.getElementById("menu").style.display = "block";
         document.getElementById("power").style.display = "block";
