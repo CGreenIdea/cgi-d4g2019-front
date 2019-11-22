@@ -213,7 +213,8 @@ footer {
     width: 100%;
 }
 .file span:last-child {
-    width: 4rem;
+    width: 8rem;
+    text-align: right;
 }
 .file:hover {
     background-color: var(--element-hover);

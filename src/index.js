@@ -43,3 +43,7 @@ import {callHousingList} from './js/import.mjs';
 window.callHousingList = callHousingList;
 //#endregion
 
+//#region User Documents
+import {callUserDocumentsList} from './js/documents.mjs';
+window.callUserDocumentsList = callUserDocumentsList;
+//#endregion
