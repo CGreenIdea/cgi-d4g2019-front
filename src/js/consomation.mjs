@@ -1,4 +1,6 @@
-export function generateSVG()
+import { Constants } from './constant.mjs';
+
+export function generateSVG(jsonData)
 {
     var svg = '<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1200 400" width="1200" height="400">';
    /* cadre */
@@ -16,9 +18,7 @@ export function generateSVG()
     svg += '<line x1="1170" y1="385" x2="1180" y2="380" stroke="black" />';
 
     /* boucle sur les valeurs */
-    var jsonData = '[{"date":"2019-01-01","energy":6019},{"date":"2019-01-02","energy":768},{"date":"2019-01-03","energy":6219},{"date":"2019-01-04","energy":2041},{"date":"2019-01-05","energy":7141},{"date":"2019-01-06","energy":3706},{"date":"2019-01-07","energy":7342},{"date":"2019-01-08","energy":4110},{"date":"2019-01-09","energy":3538},{"date":"2019-01-10","energy":4574},{"date":"2019-01-11","energy":6019},{"date":"2019-01-12","energy":768},{"date":"2019-01-13","energy":6219},{"date":"2019-01-14","energy":2041},{"date":"2019-01-15","energy":7141},{"date":"2019-01-16","energy":3706},{"date":"2019-01-17","energy":7342},{"date":"2019-01-18","energy":4110},{"date":"2019-01-19","energy":3538},{"date":"2019-01-20","energy":4574},{"date":"2019-01-21","energy":6019},{"date":"2019-01-22","energy":768},{"date":"2019-01-23","energy":6219},{"date":"2019-01-24","energy":2041},{"date":"2019-01-25","energy":7141},{"date":"2019-01-26","energy":3706},{"date":"2019-01-27","energy":7342},{"date":"2019-01-28","energy":4110},{"date":"2019-01-29","energy":3538},{"date":"2019-01-30","energy":4574},{"date":"2019-01-31","energy":6019}]';
-    var datas = JSON.parse(jsonData);
-    var nbcols = datas.length;
+    var nbcols = jsonData.length;
     var maxConso = 0;
     var colWidth = parseInt((1160 - (nbcols * 5)) / nbcols);
     for(var i=0;i<nbcols;i++)
@@ -28,7 +28,7 @@ export function generateSVG()
     var maxH = maxConso/340
     for(var i=0;i<nbcols;i++)
     {
-        var conso = datas[i].energy;
+        var conso = jsonData[i].energy;
         var x = 25 + (i * colWidth + 5 * i);
         var h = conso / maxH;
         var y = 380-h;
@@ -45,4 +45,21 @@ export function generateSVG()
 
     svg += '/>';
     document.getElementById("histogramme").innerHTML = svg;
+}
+
+export function rangeConso(idStart, idEnd) {
+    var dateStart = document.getElementById(idStart).value;
+    var dateEnd = document.getElementById(idEnd).value;
+    var xhttp = new XMLHttpRequest();
+    xhttp.withCredentials = true;
+    xhttp.onreadystatechange = function ()
+    {
+        if (this.readyState == 4)
+        {
+            generateSVG(JSON.parse(this.responseText))
+        }
+    };
+    xhttp.open('GET', `${Constants.serverBaseUrl}/consumption/range/${dateStart}/${dateEnd}`, true);
+    xhttp.setRequestHeader("Content-type", "application/json");
+    xhttp.send();
 }

@@ -28,9 +28,18 @@ import {checkDisclaimer} from './js/inscription.mjs';
 window.checkDisclaimer = checkDisclaimer;
 //#endregion
 
-//#region Documents
+//#region Consomation
 import {generateSVG} from './js/consomation.mjs';
 window.generateSVG = generateSVG;
+import {rangeConso} from './js/consomation.mjs';
+window.rangeConso = rangeConso;
+//#endregion
+
+//#region User / Menu
+import {checkUser} from './js/login.mjs';
+window.checkUser = checkUser;
+import {logout} from './js/login.mjs';
+window.logout = logout;
 //#endregion
 
 //#region Admin Consultation

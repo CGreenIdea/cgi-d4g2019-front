@@ -1,9 +1,6 @@
 ---
 title: Ma consomation
 ---
-<script>
-  document.getElementById("menu").style.display = "block";
-</script>
 <h1>Ma consomation</h1>
 
 <form class="conso">
@@ -19,7 +16,7 @@ title: Ma consomation
       <input type="date" id="dateDebut">
       <label for="dateFin"> au </label>
       <input type="date" id="dateFin">
-      <input type="button" class="gButton greyButton" value="Voir" onclick="generateSVG()">
+      <input type="button" class="gButton greyButton" value="Voir" onclick="rangeConso('dateDebut','dateFin')">
     </form>
 
     <div id="histogramme"></div>

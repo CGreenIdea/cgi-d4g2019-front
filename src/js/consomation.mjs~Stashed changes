@@ -1,0 +1,6 @@
+import { Constants } from './constant.mjs';
+
+export function rangeConso(idDebut, idFin)
+{
+
+}
