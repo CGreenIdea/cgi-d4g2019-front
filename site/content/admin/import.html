@@ -5,7 +5,7 @@ title: import de documents
 
 <div class="crea" id="import">
     <div class="divMilieu">
-        <form action="http://localhost:8080/document/upload" enctype="multipart/form-data" method="post">
+        <form id="adminUploadDocForm" action="" enctype="multipart/form-data" method="post">
             <label for="adminFileUpload">Sélectionner un fichier à uploader</label>
             <input type="file" name="file" id="adminFileUpload" class="inputType" />
 
@@ -26,5 +26,6 @@ title: import de documents
 <script>
     window.addEventListener('load', function () {
         callHousingList();
+        correctFormActionUrl("adminUploadDocForm", "document/upload")
     })
 </script>
