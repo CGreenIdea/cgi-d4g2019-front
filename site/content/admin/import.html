@@ -3,8 +3,10 @@ title: import de documents
 ---
 <h1>Importation d'un document</h1>
 <div id="import">
-  <form action="/import/file" enctype="multipart/form-data" method="post">
-    <label>Sélectionnez un fichier</label><input type="file" name="file">
-    <input type="submit" title="Import"/>
+  <form action="/api/document" enctype="multipart/form-data" method="post">
+    <label>Select File</label><input type= "file" name="file" /> <br/><br/>
+    <label>Title</label> <input name="title" maxlength="10"/> <br/><br/>
+    <label>Home</label> <input name="home" maxlength="10"/> <br/><br/>
+    <input type="submit" title="Save"/>
   </form>
 </div>
