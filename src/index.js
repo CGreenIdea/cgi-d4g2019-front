@@ -45,8 +45,8 @@ window.logout = logout;
 //#endregion
 
 //#region Admin Consultation
-import { CallGetConsultationData } from './js/admin.consultation.mjs';
-window.CallGetConsultationData = CallGetConsultationData;
+import { callGetConsultationData } from './js/admin.consultation.mjs';
+window.callGetConsultationData = callGetConsultationData;
 //#endregion
 
 //#region Admin Consultation
@@ -59,5 +59,3 @@ import { callUserDocumentsList } from './js/documents.mjs';
 window.callUserDocumentsList = callUserDocumentsList;
 //#endregion
 
-import { callGetConsultationData } from './js/admin.consultation.mjs';
-window.callGetConsultationData = callGetConsultationData;

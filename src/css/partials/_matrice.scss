@@ -1,0 +1,44 @@
+.tableMatrice {
+    width: 80%;
+    margin: auto;
+}
+
+.tableMatrice th {
+    background-color: var(--text-watermark);
+    color: white;
+    line-height: 1.4;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    font-size: 18px;
+}
+
+.tableMatrice td {
+    line-height: 1.4;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.tableMatrice tr:nth-child(2n) {
+    background-color: #f8f6ff;
+}
+
+.tableMatrice .tableMatriceLeftCol {
+    width: 35%;
+    padding-left: 40px;
+}
+
+.tableMatrice .tableMatriceLabelCol {
+    width: 10%;
+    padding-left: 10px;
+}
+
+.tableMatrice .tableMatriceHeatCol {
+    width: 20%;
+    padding-left: 20px;
+}
+
+.tableMatrice .tableMatriceRightCol {
+    width: 35%;
+    padding-right: 40px;
+    text-align: right;
+}

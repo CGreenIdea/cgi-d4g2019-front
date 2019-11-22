@@ -1,64 +1,45 @@
 import { Constants } from './constant.mjs';
 
 export function callGetConsultationData() {
-    //var response = callRest('consumption/all', 'GET', "");
 
-    var mockData = `[
-        {
-          "energy": 1666,
-          "home": {
-            "city": "Assencières",
-            "constructionYear": 1908,
-            "heatSource": "fuel",
-            "id": 1,
-            "label": "A",
-            "nbRooms": 3,
-            "street": "impasse des Lilas",
-            "streetNb": "1",
-            "surface": 70,
-            "type": 1,
-            "zipCode": "10220"
-          },
-          "id": 1,
-          "readingDate": "2019-01-01"
-        },
-        {
-          "energy": 6019,
-          "home": {
-            "city": "Alleins",
-            "constructionYear": 1969,
-            "heatSource": "électricité",
-            "id": 4,
-            "label": "D",
-            "nbRooms": 2,
-            "street": "Avenue du Maréchal Juin",
-            "streetNb": "93",
-            "surface": 55,
-            "type": 1,
-            "zipCode": "13980"
-          },
-          "id": 94,
-          "readingDate": "2019-01-01"
-        }]`;
-
-    constructDataTable(mockData);
-    //if (response.content != "")
-    //    ConstructDataTable(response.content);
+    var xhttp = new XMLHttpRequest();
+    xhttp.withCredentials = true;
+    xhttp.open('GET', `${Constants.serverBaseUrl}/consumption/all`, true);
+    xhttp.setRequestHeader("Content-type", "application/json");
+    xhttp.onreadystatechange = function () {
+        console.log(`Service response status code: ${this.status}`);
+        if (this.readyState == 4) {
+            constructDataTable(this.responseText);
+        }
+    };
+    xhttp.send();
 }
 
 function constructDataTable(data) {
     var dataObj = JSON.parse(data);
     if (dataObj != null && dataObj.length > 0) {
+        var tbData = document.getElementById("tableConsultAdminConsumption");
         dataObj.forEach(element => {
-           /*  <th>Date</th>
-                <th>Foyer</th>
-                <th>Energie</th> */
-                const rowConsumption = `
-                <tr>
-                    <td>${element.readingDate}</td>
-                    <td>${element.home.label}</td>
-                    <td>${element.energy}</td>
-                </tr>`;
+
+            var row = tbData.insertRow(1);
+            var cellDate = row.insertCell(0);
+            var cellLabel = row.insertCell(1);
+            var cellHeatType = row.insertCell(2);
+            var cellEnergy = row.insertCell(3);
+
+            cellDate.innerHTML = displayConsumptionDate(element.readingDate);
+            cellDate.classList.add("tableMatriceLeftCol");
+            cellLabel.innerHTML = element.home.label;
+            cellLabel.classList.add("tableMatriceLabelCol");
+            cellHeatType.innerHTML = element.home.heatSource;
+            cellHeatType.classList.add("tableMatriceHeatCol");
+            cellEnergy.innerHTML = `${element.energy} kWh`;
+            cellEnergy.classList.add("tableMatriceRightCol");
         });
     }
+}
+
+function displayConsumptionDate(readingDate) {
+    const dt = new Date(readingDate);
+    return `${dt.getDate()}/${("0" + (dt.getMonth() + 1)).slice(-2)}/${dt.getFullYear()}`;
 }
