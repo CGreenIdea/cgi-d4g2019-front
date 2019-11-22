@@ -1,6 +1,6 @@
 import { Constants } from './constant.mjs';
 
-export function generateSVG(jsonData)
+export function generateSVG(jsonDataBrut)
 {
     var svg = '<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1200 400" width="1200" height="400">';
    /* cadre */
@@ -18,12 +18,13 @@ export function generateSVG(jsonData)
     svg += '<line x1="1170" y1="385" x2="1180" y2="380" stroke="black" />';
 
     /* boucle sur les valeurs */
+    var jsonData = JSON.parse(jsonDataBrut);
     var nbcols = jsonData.length;
     var maxConso = 0;
     var colWidth = parseInt((1160 - (nbcols * 5)) / nbcols);
     for(var i=0;i<nbcols;i++)
     {
-        if(datas[i].energy > maxConso)maxConso=datas[i].energy;
+        if(jsonData[i].energy > maxConso)maxConso=jsonData[i].energy;
     }
     var maxH = maxConso/340
     for(var i=0;i<nbcols;i++)
@@ -56,9 +57,11 @@ export function rangeConso(idStart, idEnd) {
     {
         if (this.readyState == 4)
         {
-            generateSVG(JSON.parse(this.responseText))
+            console.log(this.responseText);
+            generateSVG(this.responseText)
         }
     };
+    console.log(`${Constants.serverBaseUrl}/consumption/range/${dateStart}/${dateEnd}`);
     xhttp.open('GET', `${Constants.serverBaseUrl}/consumption/range/${dateStart}/${dateEnd}`, true);
     xhttp.setRequestHeader("Content-type", "application/json");
     xhttp.send();
