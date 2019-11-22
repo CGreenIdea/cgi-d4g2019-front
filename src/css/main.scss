@@ -87,13 +87,19 @@ body {
     border-bottom: 1px solid var(--button-primary-background);
 }
 
-#bandeau span {
+#power {
     line-height: 64px;
     position: absolute;
     right: 10px;
-    color: white;
+    cursor:pointer;
 }
-
+#utilisateur {
+    line-height: 64px;
+    position: absolute;
+    right: 100px;
+    color: black;
+    font-weight:bold;
+}
 .crea {
     overflow: hidden;
     min-width: 100%;
