@@ -29,7 +29,7 @@ window.checkDisclaimer = checkDisclaimer;
 //#endregion
 
 //#region Documents
-import {generateSVG} from './js/documents.mjs';
+import {generateSVG} from './js/consomation.mjs';
 window.generateSVG = generateSVG;
 //#endregion
 
