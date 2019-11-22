@@ -1,5 +1,3 @@
-import { Constants } from './constant.mjs';
-
 export function slideSubscriptionNext(num) {
     changeClass('creation_' + num, 'divGauche');
     changeClass('creation_' + (num + 1), 'divMilieu');
