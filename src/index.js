@@ -11,6 +11,7 @@ window.callRest = callRest;
 import {submitLogin} from './js/login.mjs';
 window.submitLogin = submitLogin;
 
+//#region Inscription
 import {slideSubscriptionNext} from './js/inscription.mjs';
 window.slideSubscriptionNext = slideSubscriptionNext;
 
@@ -25,5 +26,14 @@ window.submitSubscriptionForm = submitSubscriptionForm;
 
 import {checkDisclaimer} from './js/inscription.mjs';
 window.checkDisclaimer = checkDisclaimer;
+//#endregion
+
+//#region Documents
 import {generateSVG} from './js/documents.mjs';
 window.generateSVG = generateSVG;
+//#endregion
+
+//#region Admin Consultation
+import {CallGetConsultationData} from './js/admin.consultation.mjs';
+window.CallGetConsultationData = CallGetConsultationData;
+//#endregion
