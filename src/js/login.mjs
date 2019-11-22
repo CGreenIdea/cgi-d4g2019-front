@@ -13,16 +13,14 @@ export function checkUser() {
         document.getElementById("menu").style.display = "none";
         document.getElementById("power").style.display = "none";
         document.getElementById("utilisateur").innerHTML = "";
+        /*if(window.location.pathname != "/" || window.location.pathname != "/inscription/")document.location = '/';*/
+
+
     } else {
         document.getElementById("menu").style.display = "block";
         document.getElementById("power").style.display = "block";
         var username = getCookie('quarkus-username');
-        if (username == "") {
-            setUser();
-            /* [{"firstName":"Martin","home":{"city":"Assencières","constructionYear":1908,"heatSource":"fuel","id":1,"label":"A","nbRooms":3,"street":"impasse des Lilas","streetNb":"1","surface":70,"type":1,"zipCode":"10220"},"id":1,"lastName":"Pierre "}] */
-            //username = user['content'].firstName;
-            //setCookie('quarkus-username', username);
-        }
+        if (username == "") {setUser();}
         document.getElementById("utilisateur").innerHTML = username;
     }
 }
@@ -33,7 +31,7 @@ function setUser() {
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4) {
             var user = JSON.parse(this.responseText);
-            setCookie('quarkus-username', user[0].firstName + ', ' + user[0].lastName);
+            setCookie('quarkus-username', user[0].firstName + ', ' + user[0].lastName,'', '/');
         }
     };
     xhttp.open('GET', `${Constants.serverBaseUrl}/tenant/mine`, true);
@@ -70,6 +68,7 @@ function eraseCookie() {
     var dtExpireDel = new Date();
     dtExpireDel.setTime(dtExpireDel.getTime() - 1);
     setCookie('quarkus-credential', '', dtExpireDel, '/');
+    setCookie('quarkus-username', '', dtExpireDel, '/');
 }
 
 function setCookie(nom, valeur, expire, chemin, domaine, securite) {

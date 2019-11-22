@@ -3,7 +3,7 @@
   <head>
     {{- partial "head.html" . -}}
   </head>
-  <body onload="checkUser()">
+  <body>
     <header>
       {{- partial "bandeau.html" . -}}
     </header>
@@ -14,5 +14,6 @@
     <footer>
       {{- partial "footer.html" . -}}
     </footer>
+    <script>window.addEventListener('load', function () {checkUser();})</script>
   </body>
 </html>

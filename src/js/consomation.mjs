@@ -57,11 +57,9 @@ export function rangeConso(idStart, idEnd) {
     {
         if (this.readyState == 4)
         {
-            console.log(this.responseText);
             generateSVG(this.responseText)
         }
     };
-    console.log(`${Constants.serverBaseUrl}/consumption/range/${dateStart}/${dateEnd}`);
     xhttp.open('GET', `${Constants.serverBaseUrl}/consumption/range/${dateStart}/${dateEnd}`, true);
     xhttp.setRequestHeader("Content-type", "application/json");
     xhttp.send();

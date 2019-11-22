@@ -14,10 +14,13 @@ export function callUserDocumentsList() {
     xhttp.send();
 }
 
-function constructDocumentList(data) {
-    if (data != null) {
+function constructDocumentList(data)
+{
+    if (data.lenght > 0)
+    {
         var objData = JSON.parse(data);
-        if (objData != null && objData.length > 0) {
+        if (objData != null && objData.length > 0)
+        {
             objData.forEach(element => {
                 const divDoc = `
                 <div class="file">
@@ -26,9 +29,11 @@ function constructDocumentList(data) {
                     <span>${ displayFileDate(element.creationDate)}</span>
                 </div>`;
                 document.getElementById("listfiles").innerHTML += divDoc;
-            });
+                });
 
         }
+    }else{
+        document.getElementById("listfiles").innerHTML = '<div class="milieu">Aucun documents disponible actuellement.</div>';
     }
 }
 

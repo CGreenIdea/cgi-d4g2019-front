@@ -35,6 +35,8 @@ import { generateSVG } from './js/consomation.mjs';
 window.generateSVG = generateSVG;
 import { rangeConso } from './js/consomation.mjs';
 window.rangeConso = rangeConso;
+import {callCompare} from './js/compare.mjs';
+window.callCompare = callCompare;
 //#endregion
 
 //#region User / Menu
