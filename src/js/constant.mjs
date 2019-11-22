@@ -2,6 +2,6 @@
 
 export class Constants {
     static get serverBaseUrl() {
-        return "http://localhost:8080";
+        return "/api";
     }
 }
