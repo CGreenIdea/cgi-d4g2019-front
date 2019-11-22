@@ -37,3 +37,9 @@ window.generateSVG = generateSVG;
 import {CallGetConsultationData} from './js/admin.consultation.mjs';
 window.CallGetConsultationData = CallGetConsultationData;
 //#endregion
+
+//#region Admin Consultation
+import {callHousingList} from './js/import.mjs';
+window.callHousingList = callHousingList;
+//#endregion
+

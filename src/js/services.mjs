@@ -24,6 +24,8 @@ export function callRest(serviceUrl, method, jsonData) {
     try {
         if (jsonData != "")
             xhttp.send(jsonData);
+        else
+            xhttp.send();
     }
     catch { }
 }

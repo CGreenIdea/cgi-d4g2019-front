@@ -2,11 +2,28 @@
 title: import de documents
 ---
 <h1>Importation d'un document</h1>
-<div id="import">
-  <form action="/api/document" enctype="multipart/form-data" method="post">
-    <label>Select File</label><input type="file" name="file"/> <br/><br/>
-    <label>Title</label> <input name="title" maxlength="10"/> <br/><br/>
-    <label>Home</label> <input name="home" maxlength="10"/> <br/><br/>
-    <input type="submit" title="Save"/>
-  </form>
+
+<button onclick="callHousingList()" value="OK"></button>
+
+<div class="crea" id="import">
+    <div class="divMilieu">
+        <form action="http://localhost:8080/api/document" enctype="multipart/form-data" method="post">
+            <label for="adminFileUpload">Sélectionner un fichier à uploader</label>
+            <input type="file" name="file" id="adminFileUpload" class="inputType" />
+
+            <label for="adminFileName">Title</label>
+            <input name="title" maxlength="10" id="adminFileName" class="inputType" required />
+
+            <label for="adminHousingSelect">Logement</label>
+            <select name="home" maxlength="10" id="adminHousingSelect" class="inputType" required>
+                <option value="">-</option>
+            </select>
+
+            <input type="submit" class="gButton greenButton" value="Envoyer" />
+        </form>
+    </div>
 </div>
+
+<script>
+
+</script>
