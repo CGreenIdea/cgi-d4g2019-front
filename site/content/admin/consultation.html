@@ -3,22 +3,24 @@ title: Consultation de la consommation
 ---
 <h1>Consultation de la consommation des utilisateurs</h1>
 
-<script>
-//CallGetConsultationData();
-</script>
-
-
 <div>
-  <table>
-    <thead>
-    <tr>
-      <th>Date</th>
-      <th>Foyer</th>
-      <th>Energie</th>
-    </tr>
-    </thead>
-    <tbody>
+    <table id="tableConsultAdminConsumption">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Foyer</th>
+                <th>Energie</th>
+            </tr>
+        </thead>
+        <tbody>
 
-    </tbody>
-  </table>
+        </tbody>
+    </table>
 </div>
+
+
+<script>
+    window.addEventListener('load', function () {
+        callGetConsultationData();
+    })
+</script>
