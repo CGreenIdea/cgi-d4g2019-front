@@ -31,16 +31,16 @@ window.checkDisclaimer = checkDisclaimer;
 //#endregion
 
 //#region Consomation
-import {generateSVG} from './js/consomation.mjs';
+import { generateSVG } from './js/consomation.mjs';
 window.generateSVG = generateSVG;
-import {rangeConso} from './js/consomation.mjs';
+import { rangeConso } from './js/consomation.mjs';
 window.rangeConso = rangeConso;
 //#endregion
 
 //#region User / Menu
-import {checkUser} from './js/login.mjs';
+import { checkUser } from './js/login.mjs';
 window.checkUser = checkUser;
-import {logout} from './js/login.mjs';
+import { logout } from './js/login.mjs';
 window.logout = logout;
 //#endregion
 
@@ -58,3 +58,6 @@ window.callHousingList = callHousingList;
 import { callUserDocumentsList } from './js/documents.mjs';
 window.callUserDocumentsList = callUserDocumentsList;
 //#endregion
+
+import { callGetConsultationData } from './js/admin.consultation.mjs';
+window.callGetConsultationData = callGetConsultationData;
