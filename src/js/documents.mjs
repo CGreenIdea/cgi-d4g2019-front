@@ -1,7 +1,7 @@
 export function generateSVG()
 {
     var svg = '<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1200 400" width="1200" height="400">';
-    /* cadre */
+   /* cadre */
     svg += '<line x1="0" y1="0" x2="0" y2="400" stroke="grey" />';
     svg += '<line x1="1200" y1="0" x2="1200" y2="400" stroke="grey" />';
     svg += '<line x1="0" y1="0" x2="1200" y2="0" stroke="grey" />';
@@ -33,12 +33,12 @@ export function generateSVG()
         var h = conso / maxH;
         var y = 380-h;
         var d = i * 0.05;
-        svg += '<rect x="'+x+'" y="380" width="' + colWidth + '" height="0" stroke="blue" fill="blue">';
+        svg += '<rect x="'+x+'" y="380" width="' + colWidth + '" height="0" stroke="blue" fill="blue" onmouseout="document.getElementById(\'conso'+i+'\').style.display=\'none\'" onmousemove="document.getElementById(\'conso'+i+'\').style.display=\'block\'">';
 
         svg += '<animate attributeType="CSS" attributeName="height" from="0" to="'+h+'" dur="0.5s" repeatCount="0" begin="'+d+'s" fill="freeze"/>';
         svg += '<animate attributeType="CSS" attributeName="y" from="380" to="'+y+'" dur="0.5s" repeatCount="0" begin="'+d+'s" fill="freeze"/>';
         svg += '</rect>';
-        svg += '<text style="fill:#888" x="'+x+'" y="'+(y-10)+'">'+conso+'</text>';
+        svg += '<text id="conso'+i+'" style="font-size:0.8em;display:none;fill:#000" x="'+x+'" y="'+(y-10)+'">'+conso+'</text>';
 
         svg += '<text style="fill:#888" x="'+(x+5)+'" y="395">'+(i+1)+'</text>';
     }
