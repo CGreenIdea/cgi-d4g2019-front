@@ -29,7 +29,7 @@ window.checkDisclaimer = checkDisclaimer;
 //#endregion
 
 //#region Documents
-import {generateSVG} from './js/documents.mjs';
+import {generateSVG} from './js/consomation.mjs';
 window.generateSVG = generateSVG;
 //#endregion
 
@@ -37,3 +37,9 @@ window.generateSVG = generateSVG;
 import {CallGetConsultationData} from './js/admin.consultation.mjs';
 window.CallGetConsultationData = CallGetConsultationData;
 //#endregion
+
+//#region Admin Consultation
+import {callHousingList} from './js/import.mjs';
+window.callHousingList = callHousingList;
+//#endregion
+

@@ -3,6 +3,7 @@ import { Constants } from './constant.mjs';
 
 export function callRest(serviceUrl, method, jsonData) {
     var xhttp = new XMLHttpRequest();
+    xhttp.withCredentials = true;
 
     xhttp.onreadystatechange = function () {
         console.log(`Service response status code: ${this.status}`);
@@ -13,7 +14,6 @@ export function callRest(serviceUrl, method, jsonData) {
     };
 
     //TODO: see if headers are needed
-    //TODO: pass cookie auth
 
     xhttp.open(method, `${Constants.serverBaseUrl}/${serviceUrl}`, true);
     xhttp.setRequestHeader("Content-type", "application/json");
@@ -24,6 +24,8 @@ export function callRest(serviceUrl, method, jsonData) {
     try {
         if (jsonData != "")
             xhttp.send(jsonData);
+        else
+            xhttp.send();
     }
     catch { }
 }
