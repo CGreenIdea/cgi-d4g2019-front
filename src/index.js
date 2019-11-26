@@ -30,10 +30,10 @@ import { checkDisclaimer } from './js/inscription.mjs';
 window.checkDisclaimer = checkDisclaimer;
 //#endregion
 
-//#region Consomation
-import { generateSVG } from './js/consomation.mjs';
+//#region Consommation
+import { generateSVG } from './js/consommation.mjs';
 window.generateSVG = generateSVG;
-import { rangeConso } from './js/consomation.mjs';
+import { rangeConso } from './js/consommation.mjs';
 window.rangeConso = rangeConso;
 import {callCompare} from './js/compare.mjs';
 window.callCompare = callCompare;
