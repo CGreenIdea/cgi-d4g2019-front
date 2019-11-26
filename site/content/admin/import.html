@@ -10,11 +10,10 @@ title: import de documents
             <input type="file" name="file" id="adminFileUpload" class="inputType" />
 
             <label for="adminFileName">Title</label>
-            <input name="title" maxlength="10" id="adminFileName" class="inputType" required />
+            <input name="title" id="adminFileName" class="inputType" required />
 
             <label for="adminHousingSelect">Logement</label>
-            <select name="home" maxlength="10" id="adminHousingSelect" class="inputType" required
-                onload="callHousingList()">
+            <select name="home" id="adminHousingSelect" class="inputType" required onload="callHousingList()">
                 <option value="">-</option>
             </select>
 
